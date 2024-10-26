@@ -55,7 +55,7 @@ if (file_exists($controllerPath)) {
     }
 } else {
     http_response_code(404);
-    echo json_encode(['message' => 'Rota não encontrada.'],JSON_UNESCAPED_UNICODE);
+    echo json_encode(['message' => 'Rota não encontrada...'],JSON_UNESCAPED_UNICODE);
 }
 
 
