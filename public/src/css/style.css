@@ -1,0 +1,26 @@
+.justifyContainer{
+    display: none;
+}
+.form-section header h4{
+    rotate: -90deg;
+
+}
+.positionOption{
+    border: none;
+    border-radius: 5px;
+   
+}
+.positionOption:hover{
+    font-weight: bolder;
+    color: #fd9813;
+}
+.positionOption:active{
+    z-index: 4;
+    outline: #fd9813 4px solid;
+    
+
+}
+.positionOption.selected{
+    border: #007bff 3px solid;
+    
+}
