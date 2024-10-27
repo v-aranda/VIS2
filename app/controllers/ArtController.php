@@ -35,7 +35,7 @@ class ArtController {
                 echo json_encode($art);
             } else {
                 http_response_code(404); // Not Found
-                echo json_encode(['message' => 'Arte não encontrada.']);
+                echo json_encode(['message' => 'Arte não encontrada.'], JSON_UNESCAPED_UNICODE);
             }
         } catch (Exception $e) {
             $this->handleError($e);
@@ -50,7 +50,7 @@ class ArtController {
                 http_response_code(204); // No Content
             } else {
                 http_response_code(404); // Not Found
-                echo json_encode(['message' => 'Arte não encontrada.']);
+                echo json_encode(['message' => 'Arte não encontrada.'], JSON_UNESCAPED_UNICODE);
             }
         } catch (Exception $e) {
             $this->handleError($e);
@@ -61,12 +61,13 @@ class ArtController {
     public function POSTArt() {
         try {
             // Obter os dados do corpo da requisição
-            $data = json_decode(file_get_contents('php://input'), true);
+            $data = json_decode(file_get_contents('php://input')
+            , true);
 
             // Validar os dados (implementar validações conforme necessário)
             if (!isset($data['ART_DESCRIPTION']) || !isset($data['ART_OS'])) {
                 http_response_code(400); // Bad Request
-                echo json_encode(['message' => 'Dados inválidos.']);
+                echo json_encode(['message' => 'Dados inválidos.'], JSON_UNESCAPED_UNICODE);
                 return;
             }
 
@@ -86,17 +87,17 @@ class ArtController {
             // Validar os dados (implementar validações conforme necessário)
             if (!isset($data['ART_DESCRIPTION']) || !isset($data['ART_OS'])) {
                 http_response_code(400); // Bad Request
-                echo json_encode(['message' => 'Dados inválidos.']);
+                echo json_encode(['message' => 'Dados inválidos.'], JSON_UNESCAPED_UNICODE);
                 return;
             }
 
             $rowsAffected = $this->artModel->update($id, $data['ART_DESCRIPTION'], $data['ART_OS']);
             if ($rowsAffected > 0) {
                 http_response_code(200); // OK
-                echo json_encode(['message' => 'Arte atualizada com sucesso.']);
+                echo json_encode(['message' => 'Arte atualizada com sucesso.'], JSON_UNESCAPED_UNICODE);
             } else {
                 http_response_code(404); // Not Found
-                echo json_encode(['message' => 'Arte não encontrada.']);
+                echo json_encode(['message' => 'Arte não encontrada.'], JSON_UNESCAPED_UNICODE);
             }
         } catch (Exception $e) {
             $this->handleError($e);
@@ -107,7 +108,7 @@ class ArtController {
     private function handleError(Exception $e) {
         error_log("Erro na API: " . $e->getMessage());
         http_response_code(500); // Internal Server Error
-        echo json_encode(['message' => 'Erro interno no servidor.']);
+        echo json_encode(['message' => 'Erro interno no servidor.'], JSON_UNESCAPED_UNICODE);
     }
 }
 

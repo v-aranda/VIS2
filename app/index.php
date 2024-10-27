@@ -6,7 +6,6 @@ include 'controllers/ArtController.php';
 
 // // Incluir os arquivos necessários (autoload ou includ
 // ... outros includes ...
-
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 $urlParts = explode('/', $url);
 
@@ -37,7 +36,6 @@ if (file_exists($controllerPath)) {
        
         // Verificar se o método existe no controlador
         if (method_exists($controller, $methodName)) {
-            echo $methodName;
 
             if($methodParam){
                 call_user_func_array([$controller, $methodName], [$methodParam]);
@@ -49,13 +47,11 @@ if (file_exists($controllerPath)) {
 
         } else {
             http_response_code(404);
-            echo $methodName;
             echo json_encode(['message' => $errorMessages['method_not_found']], JSON_UNESCAPED_UNICODE);
             return;
         }
     } else {
         http_response_code(404);
-        echo $methodName;
         echo json_encode(['message' => $errorMessages['controller_not_found']], JSON_UNESCAPED_UNICODE);
         return;
     }
