@@ -1,32 +1,13 @@
 import ElementItem from "./ElementItem.js";
 import Main from "../Main.js";
-const defaultElementsList = {
-  "elementos": [
-      {
-          "typeOfElement": "0",
-          "elementPosition": "1",
-          "elementDescription": "",
-          "container": "#elementContainer8"
-      },
-      {
-          "typeOfElement": "1",
-          "elementPosition": "0",
-          "elementDescription": "",
-          "container": "#elementContainer5"
-      },
-  ],
-  "complementos": {
-      
-  }
-}
 
 export default class ElementsList {
-  constructor(elementTypes,defaultElements=defaultElementsList.elementos, defaultComplements=defaultElementsList.complementos) {
+  constructor(elementTypes,defaultElements) {
     this.values = []; // Inicializa a lista de elementos vazia
     this.idSequence = 0
     this.elementTypes = elementTypes
  
-    this.loadData(defaultElements,defaultComplements) // Carrega elementos padrão ou de referência
+    this.loadData(defaultElements.elementos,defaultElements.complementos) // Carrega elementos padrão ou de referência
   }
   findElementByIndex(containerId) {
     const listaObjetos = this.values
@@ -81,6 +62,8 @@ export default class ElementsList {
 
   }
   loadData(elements,complements){
+    console.log(elements)
+    console.log(complements)  
     this.clearData()
     elements.forEach((element,i)=>{
       element.container = "#elementContainer"+i

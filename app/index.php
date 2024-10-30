@@ -2,6 +2,7 @@
 header('charset=utf-8');
 require 'config.php';
 include 'controllers/ArtController.php';
+include 'database/ConnectionTo.php';
 
 
 // // Incluir os arquivos necessários (autoload ou includ

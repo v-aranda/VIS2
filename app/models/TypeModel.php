@@ -1,6 +1,6 @@
 <?php
 
-class ArtModel {
+class TypeModel {
 
     private $pdo;
 
@@ -10,12 +10,10 @@ class ArtModel {
     }
 
     // CREATE - Criar um novo registro na tabela "art"
-    public function create($description, $os, $product) {
+    public function create($name) {
         try {
-            $stmt = $this->pdo->prepare("INSERT INTO art (art_description, art_os, art_product) VALUES (:description, :os, :product)");
-            $stmt->bindParam(':description', $description);
-            $stmt->bindParam(':os', $os);
-            $stmt->bindParam(':product', $product);
+            $stmt = $this->pdo->prepare("INSERT INTO `elementType`(`ety_id`, `ety_name`) VALUES (:name)");
+            $stmt->bindParam(':name', $name);
             $stmt->execute();
             return $this->pdo->lastInsertId(); 
         } catch (PDOException $e) {
@@ -30,59 +28,57 @@ class ArtModel {
     // READ - Ler todos os registros da tabela "art"
     public function readAll() {
         try {
-            $stmt = $this->pdo->query("SELECT * FROM art");
+            $stmt = $this->pdo->query("SELECT * FROM `elementType`");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             error_log("Erro ao ler registros: " . $e->getMessage());
-            throw new Exception("Erro ao ler registros da tabela art.");
+            throw new Exception("Erro ao ler registros da tabela elementType.");
         }finally{
             $this->pdo = null;
         }
     }
 
     // READ - Ler um registro específico da tabela "art" pelo ID
-    public function readById($os) {
+    public function readById($id) {
         try {
-            $stmt = $this->pdo->prepare("SELECT * FROM art WHERE art_os = :os");
-            $stmt->bindParam(':os', $os);
+            $stmt = $this->pdo->prepare("SELECT * FROM elementType WHERE ety_id = :id");
+            $stmt->bindParam(':id', $id);
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC); 
         } catch (PDOException $e) {
             error_log("Erro ao ler registro por ID: " . $e->getMessage());
-            throw new Exception("Erro ao ler registro da tabela art.");
+            throw new Exception("Erro ao ler registro da tabela elementType.");
         }finally{
             $this->pdo = null;
         }
     }
 
     // UPDATE - Atualizar um registro na tabela "art"
-    public function update($description, $os, $product) {
+    public function update($id, $name) {
         try {
-            $stmt = $this->pdo->prepare("UPDATE art SET art_description = :description, art_product = :product WHERE art_os = :os");
-
-            $stmt->bindParam(':description', $description);
-            $stmt->bindParam(':os', $os);
-            $stmt->bindParam(':product', $product);
+            $stmt = $this->pdo->prepare("UPDATE elementType SET ety_name = :name WHERE ety_id = :id");
+            $stmt->bindParam(':id', $id);
+            $stmt->bindParam(':name', $name);
             $stmt->execute();
             return $stmt->rowCount(); // Retorna o número de linhas afetadas
         } catch (PDOException $e) {
             error_log("Erro ao atualizar registro: " . $e->getMessage());
-            throw new Exception("Erro ao atualizar registro na tabela art.");
+            throw new Exception("Erro ao atualizar registro na tabela elementType.");
         }finally{
             $this->pdo = null;
         }
     }
 
     // DELETE - Deletar um registro da tabela "art"
-    public function delete($os) {
+    public function delete($id) {
         try {
-            $stmt = $this->pdo->prepare("DELETE FROM art WHERE art_os = :os");
-            $stmt->bindParam(':os', $os);
+            $stmt = $this->pdo->prepare("DELETE FROM elementType WHERE ety_id = :id");
+            $stmt->bindParam(':id', $id);
             $stmt->execute();
             return $stmt->rowCount(); // Retorna o número de linhas afetadas
         } catch (PDOException $e) {
             error_log("Erro ao deletar registro: " . $e->getMessage());
-            throw new Exception("Erro ao deletar registro da tabela art.");
+            throw new Exception("Erro ao deletar registro da tabela elementType.");
         }finally{
             $this->pdo = null;
         }

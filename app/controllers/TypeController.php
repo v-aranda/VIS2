@@ -1,41 +1,40 @@
 <?php
-include 'models/ArtModel.php';
-// ... (Classes ConnectionTo e ArtModel) ...
+include 'models/TypeModel.php';
 
-class ArtController {
+class TypeController {
 
-    private $artModel;
+    private $typeModel;
 
     public function __construct() {
-        $this->artModel = new ArtModel('vipspo66_VIP_MODELINGS'); 
+        $this->typeModel = new TypeModel('vipspo66_VIP_MODELINGS'); 
     }
 
     // GET uri/art - Obter todos os elementos
     public function GETIndex(){
         try {
-            $arts = $this->artModel->readAll();
+            $types = $this->typeModel->readAll();
             // Retornar os dados em formato JSON
             header('Content-Type: application/json');
-            echo json_encode($arts); 
+            echo json_encode($types); 
         } catch (Exception $e) {
             $this->handleError($e);
         }
     }
 
     // GET uri/art/{id} - Buscar um elemento específico
-    public function GETArt($id=null) {
+    public function GETType($id=null) {
         if(!$id){
             $this->GETIndex();
             return;
         }
         try {
-            $art = $this->artModel->readById($id);
-            if ($art) {
+            $types = $this->typeModel->readById($id);
+            if ($types) {
                 header('Content-Type: application/json');
-                echo json_encode($art);
+                echo json_encode($types);
             } else {
                 http_response_code(404); // Not Found
-                echo json_encode(['message' => 'Arte não encontrada.'], JSON_UNESCAPED_UNICODE);
+                echo json_encode(['message' => 'Posição não encontrada.'], JSON_UNESCAPED_UNICODE);
             }
         } catch (Exception $e) {
             $this->handleError($e);
@@ -43,14 +42,14 @@ class ArtController {
     }
 
     // DELETE uri/art/{id} - Deletar um elemento
-    public function DELETEArt($id) {
+    public function DELETEType($id) {
         try {
-            $rowsAffected = $this->artModel->delete($id);
+            $rowsAffected = $this->typeModel->delete($id);
             if ($rowsAffected > 0) {
                 http_response_code(204); // No Content
             } else {
                 http_response_code(404); // Not Found
-                echo json_encode(['message' => 'Arte não encontrada.'], JSON_UNESCAPED_UNICODE);
+                echo json_encode(['message' => 'Posição não encontrada.'], JSON_UNESCAPED_UNICODE);
             }
         } catch (Exception $e) {
             $this->handleError($e);
@@ -58,46 +57,46 @@ class ArtController {
     }
 
     // POST uri/art - Criar um elemento
-    public function POSTArt() {
+    public function POSTType() {
         try {
             // Obter os dados do corpo da requisição
             $data = json_decode(file_get_contents('php://input')
             , true);
 
             // Validar os dados (implementar validações conforme necessário)
-            if (!isset($data['art_description']) || !isset($data['art_os'])) {
+            if (!isset($data['pos_name'])) {
                 http_response_code(400); // Bad Request
                 echo json_encode(['message' => 'Dados inválidos.'], JSON_UNESCAPED_UNICODE);
                 return;
             }
 
-            $artId = $this->artModel->create($data['art_description'], $data['art_os'],$data['art_product']);
+            $typesId = $this->typeModel->create($data['pos_name']);
             http_response_code(201); // Created
-            echo json_encode(['art_id' => $artId]); 
+            echo json_encode(['pos_id' => $typesId]); 
         } catch (Exception $e) {
             $this->handleError($e);
         }
     }
 
     // PUT uri/art/{id} - Editar um elemento
-    public function PUTArt($id) {
+    public function PUTType($id) {
         try {
             $data = json_decode(file_get_contents('php://input'), true);
 
             // Validar os dados (implementar validações conforme necessário)
-            if (!isset($data['art_description']) || !isset($data['art_os'])) {
+            if (!isset($data['pos_name'])) {
                 http_response_code(400); // Bad Request
                 echo json_encode(['message' => 'Dados inválidos.'], JSON_UNESCAPED_UNICODE);
                 return;
             }
 
-            $rowsAffected = $this->artModel->update($id, $data['art_description'], $data['art_os'],$data['art_product']);
+            $rowsAffected = $this->typeModel->update($id, $data['pos_name']);
             if ($rowsAffected > 0) {
                 http_response_code(200); // OK
-                echo json_encode(['message' => 'Arte atualizada com sucesso.'], JSON_UNESCAPED_UNICODE);
+                echo json_encode(['message' => 'Posição atualizada com sucesso.'], JSON_UNESCAPED_UNICODE);
             } else {
                 http_response_code(404); // Not Found
-                echo json_encode(['message' => 'Arte não encontrada.'], JSON_UNESCAPED_UNICODE);
+                echo json_encode(['message' => 'Posição não encontrada.'], JSON_UNESCAPED_UNICODE);
             }
         } catch (Exception $e) {
             $this->handleError($e);
