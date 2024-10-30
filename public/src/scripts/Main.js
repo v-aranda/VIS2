@@ -23,7 +23,7 @@ const defaultElementsList =  {
     }
 
 function fetchElementsList(resp) {
-    fetch('http://localhost/VIS2/app/ArtMetaData', {
+    fetch('https://www.vipsportsproducao.com.br/VIS2/app/ArtMetaData', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ export default class Main {
     async getFormBase(osCode) {
         // Obter o valor de uma os pela URL
         try {
-            const raw_data = await fetch("http://localhost/VIS2/app/artMetaData/" + osCode)
+            const raw_data = await fetch("https://www.vipsportsproducao.com.br/VIS2/app/ArtMetaData/" + osCode)
             const data = await raw_data.json()
             return JSON.parse(data.mtd_data)
         }catch{
