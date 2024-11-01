@@ -70,12 +70,13 @@ class ArtController {
                 echo json_encode(['message' => 'Dados inválidos.'], JSON_UNESCAPED_UNICODE);
                 return;
             }
-
             $artId = $this->artModel->create($data['art_description'], $data['art_os'],$data['art_product']);
+            
             http_response_code(201); // Created
             echo json_encode(['art_id' => $artId]); 
         } catch (Exception $e) {
-            $this->handleError($e);
+            echo $e;
+            // $this->handleError($e);
         }
     }
 
@@ -108,7 +109,7 @@ class ArtController {
     private function handleError(Exception $e) {
         error_log("Erro na API: " . $e->getMessage());
         http_response_code(500); // Internal Server Error
-        echo json_encode(['message' => 'Erro interno no servidor.'], JSON_UNESCAPED_UNICODE);
+        echo json_encode(['message' => 'Erro interno no servidor.:'+$e], JSON_UNESCAPED_UNICODE);
     }
 }
 

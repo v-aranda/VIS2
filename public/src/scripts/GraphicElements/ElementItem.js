@@ -68,7 +68,9 @@ export default class ElementItem {
         }
       })
       const selectedPosition = document.querySelector("#position_"+this.element.elementPosition)
-      selectedPosition.classList.add("selected")  
+      if(selectedPosition){
+        selectedPosition.classList.add("selected")
+      }
     }
 
     const descriptionPreloadedValue = this.element.elementDescription

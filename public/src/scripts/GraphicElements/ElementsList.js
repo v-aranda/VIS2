@@ -21,19 +21,24 @@ export default class ElementsList {
   }
   alterType(index, newType) {
     const indexOfElement = this.values.indexOf(this.findElementByIndex(index))
+    const removido = {...this.values[indexOfElement]}
+
+  
+  
     if (indexOfElement >= 0) {
-      if (!this.typesOfElements(this.findElementByIndex(index).typeOfElement)){
-        const section = document.querySelector("#aditionalFormSection_"+removido[0].typeOfElement)
-        if(section){
-          section.style.display = 'none'
-        }
-      }
       this.values[indexOfElement].typeOfElement = newType;
       const section = document.querySelector("#aditionalFormSection_"+newType)
       if(section){
         section.style.display = 'flex'
       }
       
+      if (!this.typesOfElements(removido.typeOfElement)){
+        const section = document.querySelector("#aditionalFormSection_"+removido.typeOfElement)
+        
+        if(section){
+          section.style.display = 'none'
+        }
+      }
     } else {
       console.error("Índice inválido para alteração do tipo do elemento.");
     }

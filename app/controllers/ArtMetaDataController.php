@@ -1,7 +1,7 @@
 <?php
 include 'models/ArtMetaDataModel.php';
 // ... (Classes ConnectionTo e ArtModel) ...
-
+ 
 class ArtMetaDataController {
 
     private $artMetaDataModel;
@@ -35,7 +35,7 @@ class ArtMetaDataController {
                 echo json_encode($artMetaDatas);
             } else {
                 http_response_code(404); // Not Found
-                echo json_encode(['message' => 'não encontrada.'], JSON_UNESCAPED_UNICODE);
+                echo json_encode(['message' => 'Arte não encontrada.'], JSON_UNESCAPED_UNICODE);
             }
         } catch (Exception $e) {
             $this->handleError($e);
@@ -50,7 +50,7 @@ class ArtMetaDataController {
                 http_response_code(204); // No Content
             } else {
                 http_response_code(404); // Not Found
-                echo json_encode(['message' => 'Posição não encontrada.'], JSON_UNESCAPED_UNICODE);
+                echo json_encode(['message' => 'Arte não encontrada.'], JSON_UNESCAPED_UNICODE);
             }
         } catch (Exception $e) {
             $this->handleError($e);
@@ -94,10 +94,10 @@ class ArtMetaDataController {
             $rowsAffected = $this->artMetaDataModel->update($id,$data['mtd_data']);
             if ($rowsAffected > 0) {
                 http_response_code(200); // OK
-                echo json_encode(['message' => 'Posição atualizada com sucesso.'], JSON_UNESCAPED_UNICODE);
+                echo json_encode(['message' => 'Arte atualizada com sucesso.'], JSON_UNESCAPED_UNICODE);
             } else {
                 http_response_code(404); // Not Found
-                echo json_encode(['message' => 'Posição não encontrada.'], JSON_UNESCAPED_UNICODE);
+                echo json_encode(['message' => 'Arte não encontrada.'], JSON_UNESCAPED_UNICODE);
             }
         } catch (Exception $e) {
             $this->handleError($e);

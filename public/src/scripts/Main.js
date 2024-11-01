@@ -2,29 +2,95 @@ import ElementsList from "./GraphicElements/ElementsList.js"
 import ModalPositionOption from "./GraphicElements/ModalPositionOption.js";
 import FormSection from "./questions/FormSection.js";
 
+const dev_host = "http://localhost"
+const prod_host = "https://vipsportsproducao.com.br"
+var global_host = dev_host
+
+const defaultElementsList = {
+    "elementos": [
+        {
+            "typeOfElement": "0",
+            "elementPosition": "-1",
+            "elementDescription": "",
+            "container": "#elementContainer0"
+        },
+        {
+            "typeOfElement": "1",
+            "elementPosition": "-1",
+            "elementDescription": "",
+            "container": "#elementContainer1"
+        }
+    ],
+    "complementos": {}
+}
+
+async function createArt(resp, osCode) {
+    try {
+        const rawData = await fetch('http://localhost/VIS2/app/Os/' + osCode)
+        const osData = await rawData.json()
 
 
-const defaultElementsList =  {
-        "elementos": [
-            {
-                "typeOfElement": "0",
-                "elementPosition": "-1",
-                "elementDescription": "",
-                "container": "#elementContainer0"
+        fetch(`${global_host}/VIS2/app/Art`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
             },
-            {
-                "typeOfElement": "1",
-                "elementPosition": "-1",
-                "elementDescription": "",
-                "container": "#elementContainer1"
-            }
-        ],
-        "complementos": {}
+            body: JSON.stringify(osData),
+        }).then(() => createArtMetaData(resp))
+            .catch((error) => {
+                Swal.fire({
+                    title: 'Erro de Criação',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                })
+                console.error('Error', error);
+            });
+    } catch {
+        Swal.fire({
+            title: 'Os não encontrada!',
+            text: error.message,
+            icon: 'error',
+            confirmButtonText: 'OK'
+        })
+        console.error('Error', error);
     }
 
-function fetchElementsList(resp) {
-    fetch('https://www.vipsportsproducao.com.br/VIS2/app/ArtMetaData', {
+}
+async function createArtMetaData(resp) {
+    fetch(`${global_host}/VIS2/app/ArtMetaData`, {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(resp),
+    })
+        .then(response => response
+        )
+        .then(async data => {
+
+
+            Swal.fire({
+                title: 'Dados Cadastrados!',
+                text: data,
+                icon: 'success',
+                confirmButtonText: 'OK'
+            })
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            Swal.fire({
+                title: 'Erro de Criação',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'OK'
+            })
+
+        });
+}
+function updateArtMetaData(resp, osCode) {
+    fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode, {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
@@ -32,22 +98,33 @@ function fetchElementsList(resp) {
     })
         .then(response => response.json())
         .then(data => {
-            console.log('Success:', data);
+            Swal.fire({
+                title: 'Dados Atualizados!',
+                text: data.message,
+                icon: 'success',
+                confirmButtonText: 'OK'
+            })
         })
         .catch((error) => {
-            console.error('Error:', error);
+            Swal.fire({
+                title: 'Falha de Atualização!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'OK'
+            })
         });
 }
-
 export default class Main {
     static elementsTypes
     static productPositions
-    
+
     static AdditionalInfosForm
     static aditionalQuestions
 
     static formBase
     static osCode
+    static creating
+    static enabledProducts = ["1"]
 
     constructor() {
         this.preload()
@@ -58,12 +135,11 @@ export default class Main {
     }
     async preload() {
         const urlParams = new URLSearchParams(window.location.search);
-        Main.osCode = urlParams.get('url');
+        Main.osCode = urlParams.get('os');
         Main.productPositions = await this.fetchData("./src/data/ProductPositions.json")
         Main.aditionalQuestions = await this.fetchData("./src/data/AditionalQuestions.json")
         Main.elementsTypes = await this.fetchData("./src/data/ElementsTypes.json")
         Main.formBase = await this.getFormBase(Main.osCode)
-        
         this.main()
     }
     async main() {
@@ -72,7 +148,7 @@ export default class Main {
             Main.AdditionalInfosForm[key] = new FormSection(Main.aditionalQuestions[key], key)
         })
         new ModalPositionOption(Main.productPositions)
-        const elementsList = new ElementsList(Main.elementsTypes,Main.formBase);
+        const elementsList = new ElementsList(Main.elementsTypes, Main.formBase);
 
         document.querySelector("#submitButton").addEventListener("click", () => {
             this.submitHandler(elementsList)
@@ -84,15 +160,52 @@ export default class Main {
     }
 
     async getFormBase(osCode) {
-        // Obter o valor de uma os pela URL
-        try {
-            const raw_data = await fetch("https://www.vipsportsproducao.com.br/VIS2/app/ArtMetaData/" + osCode)
-            const data = await raw_data.json()
-            return JSON.parse(data.mtd_data)
-        }catch{
-            return defaultElementsList
-        }
-        
+
+   
+            const rawData = await fetch('http://localhost/VIS2/app/Os/' + osCode)
+            const osData = await rawData.json()
+            console.log(osData)
+            if(!osData.art_description
+            ){
+                return Swal.fire({
+                    title: 'Os não encontrada!',
+                    text: 'Informe um Código valido!',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                }).then(()=>history.back())
+            }else if(!Main.enabledProducts.includes(osData.art_product)){
+                return Swal.fire({
+                    title: 'Produto indisponível!',
+                    text: 'Ainda estamos trabalhando nisso!',
+                    icon: 'warning',
+                    confirmButtonText: 'OK'
+                }).then(()=>history.back())
+            }else{
+                try {
+                    document.querySelector("#formTitle").textContent = osData.art_description
+
+                    const raw_data = await fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode)
+                    let data = await raw_data.json()
+                    data = JSON.parse(data.mtd_data)
+                    Main.creating = false
+                    data.elementos = JSON.parse(data.elementos)
+                    data.complementos = JSON.parse(data.complementos)
+                    return data
+                } catch {
+                    Main.creating = true
+                    return Swal.fire({
+                        title: 'Arte Não Encontrada!',
+                        text: 'Essa OS ainda não possui uma arte',
+                        icon: 'info',
+                        confirmButtonText: 'OK'
+                    }).then(() => defaultElementsList)
+                }
+            }
+
+            
+
+
+
     }
 
     submitHandler(elementsList) {
@@ -107,28 +220,22 @@ export default class Main {
                         complements[element] = section
                     }
                 }
-
-
             })
 
             const data = {
-                "elementos": elementos,
-                "complementos": complements,
+                elementos: JSON.stringify(elementos),
+                complementos: JSON.stringify(complements),
             }
-
             const retorno = {
-                "mtd_art": Main.osCode,
-                "mtd_data": JSON.stringify(data)
+                mtd_art: Main.osCode,
+                mtd_data: JSON.stringify(data)
             }
-            console.log(retorno)
-            fetchElementsList(retorno)
-            Swal.fire({
-                title: 'Sucesso!',
-                text: 'Informações Validadas',
-                icon: 'success',
-                confirmButtonText: 'OK'
-            })
 
+            if (Main.creating) {
+                createArt(retorno, Main.osCode)
+            } else {
+                updateArtMetaData(retorno, Main.osCode)
+            }
         } catch (e) {
             Swal.fire({
                 title: 'Informação Inconsistente!',
@@ -141,6 +248,6 @@ export default class Main {
     }
 }
 
-const app = new Main() 
+const app = new Main()
 
 

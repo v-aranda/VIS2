@@ -60,7 +60,7 @@
 
 
     <main class="container mt-5">
-        <h1 class="text-center mb-4">Formulário de Atendimento - VIP Sports</h1>
+        <h1 id="formTitle" class="text-center mb-4">Formulário de Atendimento - VIP Sports</h1>
         <hr>
         <section id="ElementsContainer" class="p-3">
             <h2 class="d-flex align-items-center">
