@@ -38,7 +38,7 @@ export default class ElementItem {
         <option value="${element.ety_id}" >${element.ety_name}</option>`
     });
     // Define o valor selecionado com base no objeto
-    const selected = (typeOfElement) =>  this.elementsTypes.filter(type => type.ety_id === typeOfElement);
+    const selected = (typeOfElement) =>  this.elementsTypes.filter(type => type.ety_id == typeOfElement);
    
     typeSelect.value = this.elementsTypes.indexOf(...selected(this.element.typeOfElement)) 
     
