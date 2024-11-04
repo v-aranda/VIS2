@@ -4,7 +4,8 @@ export default class ModalPositionOption{
         this.render()
     }
     render(){
-        this.options.forEach((element, index) => {
+        this.options.forEach((element, i) => {
+            const index = i
             const options = document.querySelector("#positionOptions")
             const option = document.createElement('button')
             option.id = "position_"+index
@@ -18,7 +19,7 @@ export default class ModalPositionOption{
             const image = document.createElement('img')
             image.classList.add("col-12")
             image.classList.add("p-3")
-            image.src = './src/img/option'+index+'.png'
+            image.src = 'https://www.vipsportsproducao.com.br/VIS2/public/src/img/option'+index+'.png'
             
             const subtitle = document.createElement('p')
             subtitle.textContent=element.name
