@@ -20,7 +20,8 @@ export default class FormSection {
         // Titulo da Secção
         const containerTitle = document.createElement("header")
         const containerTitleText = document.createElement("h4")
-        containerTitleText.textContent = Main.elementsTypes[this.codigo].name
+        const elementType = Main.elementsTypes.filter(type => type.ety_id === this.codigo);
+        containerTitleText.textContent =  elementType[0].ety_name
         containerTitle.appendChild(containerTitleText)
         containerTitle.classList.add("d-flex")
         containerTitle.classList.add("align-items-center")

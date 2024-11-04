@@ -9,13 +9,13 @@ var global_host = prod_host
 const defaultElementsList = {
     "elementos": [
         {
-            "typeOfElement": "0",
+            "typeOfElement": "1",
             "elementPosition": "-1",
             "elementDescription": "",
             "container": "#elementContainer0"
         },
         {
-            "typeOfElement": "1",
+            "typeOfElement": "2",
             "elementPosition": "-1",
             "elementDescription": "",
             "container": "#elementContainer1"
@@ -139,7 +139,9 @@ export default class Main {
         const copyCode = urlParams.get('copy')
         Main.productPositions = await this.fetchData("http://localhost/VIS2/app/Position")
         Main.aditionalQuestions = await this.fetchData("./src/data/AditionalQuestions.json")
-        Main.elementsTypes = await this.fetchData("./src/data/ElementsTypes.json")
+        const rawTypes = await fetch('http://localhost/VIS2/app/Type')
+        Main.elementsTypes = await rawTypes.json()
+        console.log(Main.aditionalQuestions)
 
         Main.formBase = await this.getFormBase(Main.osCode, copyCode)
         this.main()
@@ -147,6 +149,7 @@ export default class Main {
     async main() {
         Main.AdditionalInfosForm = {}
         Object.keys(Main.aditionalQuestions).forEach(key => {
+           
             Main.AdditionalInfosForm[key] = new FormSection(Main.aditionalQuestions[key], key)
         })
         new ModalPositionOption(Main.productPositions)
@@ -158,7 +161,7 @@ export default class Main {
         document.querySelector("#addElementsButton").addEventListener("click", () => {
             elementsList.createElement()
         })
-       
+        
     }
 
     async getFormBase(osCode, copyCode = false) {

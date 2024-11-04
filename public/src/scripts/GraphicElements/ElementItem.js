@@ -33,14 +33,15 @@ export default class ElementItem {
     typeSelect.innerHTML = `
         <option value="-1" disabled selected>Selecionar</option>
       `;
-    this.elementsTypes.forEach((element, index) => {
+    this.elementsTypes.forEach((element) => {
       typeSelect.innerHTML += `
-        <option value="${index}" >${element.name}</option>`
+        <option value="${element.ety_id}" >${element.ety_name}</option>`
     });
     // Define o valor selecionado com base no objeto
-    typeSelect.value = this.element.typeOfElement;
-
-
+    const selected = (typeOfElement) =>  this.elementsTypes.filter(type => type.ety_id === typeOfElement);
+   
+    typeSelect.value = this.elementsTypes.indexOf(...selected(this.element.typeOfElement)) 
+    
     const obsContainer = document.createElement("div")
     obsContainer.classList.add("col-10")
     obsContainer.classList.add("d-flex")
@@ -95,7 +96,8 @@ export default class ElementItem {
       div.appendChild(typeSelect);
     } else {
       const primaryElement = document.createElement("label")
-      primaryElement.textContent = this.elementsTypes[this.element.typeOfElement].name
+
+      primaryElement.textContent = selected(this.element.typeOfElement)[0].ety_name
       primaryElement.classList.add("d-flex")
       primaryElement.classList.add("align-items-center")
       div.appendChild(primaryElement);
