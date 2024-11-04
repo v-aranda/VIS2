@@ -138,7 +138,7 @@ export default class Main {
         Main.osCode = urlParams.get('os');
         const copyCode = urlParams.get('copy')
         Main.productPositions = await this.fetchData(`${global_host}/VIS2/app/Position`)
-        Main.aditionalQuestions = await this.fetchData("./src/data/AditionalQuestions.json")
+        Main.aditionalQuestions = await this.fetchData(`${global_host}/VIS2/app/question`)
         const rawTypes = await fetch(`${global_host}/VIS2/app/Type`)
         Main.elementsTypes = await rawTypes.json()
         console.log(Main.aditionalQuestions)
@@ -195,7 +195,12 @@ export default class Main {
                     data = JSON.parse(data.mtd_data)
                     data.elementos = JSON.parse(data.elementos)
                     data.complementos = JSON.parse(data.complementos)
-                    return data
+                    return Swal.fire({
+                        title: 'Arte Não Encontrada!',
+                        text: 'Essa OS ainda não possui uma arte',
+                        icon: 'info',
+                        confirmButtonText: 'OK'
+                    }).then(() => data)
                 }
 
                 const raw_data = await fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode)
