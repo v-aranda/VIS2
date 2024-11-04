@@ -26,7 +26,7 @@ const defaultElementsList = {
 
 async function createArt(resp, osCode) {
     try {
-        const rawData = await fetch('http://localhost/VIS2/app/Os/' + osCode)
+        const rawData = await fetch(`${global_host}/VIS2/app/Os/` + osCode)
         const osData = await rawData.json()
 
 
@@ -137,9 +137,9 @@ export default class Main {
         const urlParams = new URLSearchParams(window.location.search);
         Main.osCode = urlParams.get('os');
         const copyCode = urlParams.get('copy')
-        Main.productPositions = await this.fetchData("http://localhost/VIS2/app/Position")
+        Main.productPositions = await this.fetchData(`${global_host}/VIS2/app/Position`)
         Main.aditionalQuestions = await this.fetchData("./src/data/AditionalQuestions.json")
-        const rawTypes = await fetch('http://localhost/VIS2/app/Type')
+        const rawTypes = await fetch(`${global_host}/VIS2/app/Type`)
         Main.elementsTypes = await rawTypes.json()
         console.log(Main.aditionalQuestions)
 
