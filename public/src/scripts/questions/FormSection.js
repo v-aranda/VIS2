@@ -21,6 +21,7 @@ export default class FormSection {
         const containerTitle = document.createElement("header")
         const containerTitleText = document.createElement("h4")
         const elementType = Main.elementsTypes.filter(type => type.ety_id === this.codigo);
+        console.log(elementType)
         containerTitleText.textContent =  elementType[0].ety_name
         containerTitle.appendChild(containerTitleText)
         containerTitle.classList.add("d-flex")
