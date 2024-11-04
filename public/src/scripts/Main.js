@@ -137,7 +137,7 @@ export default class Main {
         const urlParams = new URLSearchParams(window.location.search);
         Main.osCode = urlParams.get('os');
         const copyCode = urlParams.get('copy')
-        Main.productPositions = await this.fetchData("./src/data/ProductPositions.json")
+        Main.productPositions = await this.fetchData("http://localhost/VIS2/app/Position")
         Main.aditionalQuestions = await this.fetchData("./src/data/AditionalQuestions.json")
         Main.elementsTypes = await this.fetchData("./src/data/ElementsTypes.json")
 
@@ -158,7 +158,7 @@ export default class Main {
         document.querySelector("#addElementsButton").addEventListener("click", () => {
             elementsList.createElement()
         })
-
+       
     }
 
     async getFormBase(osCode, copyCode = false) {

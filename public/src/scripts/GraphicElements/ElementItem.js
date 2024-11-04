@@ -48,7 +48,7 @@ export default class ElementItem {
 
     const positionPreloadedName = Main.productPositions[this.element.elementPosition]
     const positionModalButton = document.createElement("button")
-    positionModalButton.textContent = positionPreloadedName? positionPreloadedName.name.toUpperCase() : "Selecionar Posição"
+    positionModalButton.textContent = positionPreloadedName? positionPreloadedName.pos_name.toUpperCase() : "Selecionar Posição"
     positionModalButton.classList.add("btn")
     positionModalButton.classList.add("ml-3")
     positionModalButton.classList.add("col-4")

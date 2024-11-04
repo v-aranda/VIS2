@@ -19,10 +19,10 @@ export default class ModalPositionOption{
             const image = document.createElement('img')
             image.classList.add("col-12")
             image.classList.add("p-3")
-            image.src = 'https://www.vipsportsproducao.com.br/VIS2/public/src/img/option'+index+'.png'
+            image.src = 'https://www.vipsportsproducao.com.br/VIS2/public/src/img/position'+element.pos_id+'.png'
             
             const subtitle = document.createElement('p')
-            subtitle.textContent=element.name
+            subtitle.textContent=element.pos_name
 
             
             
