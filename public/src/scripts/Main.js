@@ -124,7 +124,7 @@ export default class Main {
     static formBase
     static osCode
     static creating
-    static enabledProducts = ["1"]
+    static enabledProducts = [1]
 
     constructor() {
         this.preload()
@@ -173,7 +173,7 @@ export default class Main {
                     icon: 'error',
                     confirmButtonText: 'OK'
                 }).then(()=>history.back())
-            }else if(!Main.enabledProducts.includes(osData.art_product)){
+            }else if(!Main.enabledProducts.includes(parseInt(osData.art_product))){
                 return Swal.fire({
                     title: 'Produto indisponível!',
                     text: 'Ainda estamos trabalhando nisso!',
