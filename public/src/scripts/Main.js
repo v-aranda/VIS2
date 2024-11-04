@@ -4,7 +4,7 @@ import FormSection from "./questions/FormSection.js";
 
 const dev_host = "http://localhost"
 const prod_host = "https://www.vipsportsproducao.com.br"
-var global_host = prod_host
+var global_host = dev_host
 
 const defaultElementsList = {
     "elementos": [
@@ -136,10 +136,12 @@ export default class Main {
     async preload() {
         const urlParams = new URLSearchParams(window.location.search);
         Main.osCode = urlParams.get('os');
+        const copyCode = urlParams.get('copy')
         Main.productPositions = await this.fetchData("./src/data/ProductPositions.json")
         Main.aditionalQuestions = await this.fetchData("./src/data/AditionalQuestions.json")
         Main.elementsTypes = await this.fetchData("./src/data/ElementsTypes.json")
-        Main.formBase = await this.getFormBase(Main.osCode)
+
+        Main.formBase = await this.getFormBase(Main.osCode, copyCode)
         this.main()
     }
     async main() {
@@ -159,50 +161,59 @@ export default class Main {
 
     }
 
-    async getFormBase(osCode) {
+    async getFormBase(osCode, copyCode = false) {
 
-   
-            const rawData = await fetch(`${global_host}/VIS2/app/Os/${osCode}`)
-            const osData = await rawData.json()
-            console.log(osData)
-            if(!osData.art_description
-            ){
-                return Swal.fire({
-                    title: 'Os não encontrada!',
-                    text: 'Informe um Código valido!',
-                    icon: 'error',
-                    confirmButtonText: 'OK'
-                }).then(()=>history.back())
-            }else if(!Main.enabledProducts.includes(parseInt(osData.art_product))){
-                return Swal.fire({
-                    title: 'Produto indisponível!',
-                    text: 'Ainda estamos trabalhando nisso!',
-                    icon: 'warning',
-                    confirmButtonText: 'OK'
-                }).then(()=>history.back())
-            }else{
-                try {
-                    document.querySelector("#formTitle").textContent = osData.art_description
 
-                    const raw_data = await fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode)
+        const rawData = await fetch(`${global_host}/VIS2/app/Os/${osCode}`)
+        const osData = await rawData.json()
+        if (!osData.art_description
+        ) {
+            return Swal.fire({
+                title: 'Os não encontrada!',
+                text: 'Informe um Código valido!',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            }).then(() => history.back())
+        } else if (!Main.enabledProducts.includes(parseInt(osData.art_product))) {
+            return Swal.fire({
+                title: 'Produto indisponível!',
+                text: 'Ainda estamos trabalhando nisso!',
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            }).then(() => history.back())
+        } else {
+            try {
+                document.querySelector("#formTitle").textContent = osData.art_description
+
+                if (copyCode) {
+                    Main.creating = true
+                    const raw_data = await fetch(`${global_host}/VIS2/app/ArtMetaData/` + copyCode)
                     let data = await raw_data.json()
                     data = JSON.parse(data.mtd_data)
-                    Main.creating = false
                     data.elementos = JSON.parse(data.elementos)
                     data.complementos = JSON.parse(data.complementos)
                     return data
-                } catch {
-                    Main.creating = true
-                    return Swal.fire({
-                        title: 'Arte Não Encontrada!',
-                        text: 'Essa OS ainda não possui uma arte',
-                        icon: 'info',
-                        confirmButtonText: 'OK'
-                    }).then(() => defaultElementsList)
                 }
-            }
 
-            
+                const raw_data = await fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode)
+                let data = await raw_data.json()
+                data = JSON.parse(data.mtd_data)
+                Main.creating = false
+                data.elementos = JSON.parse(data.elementos)
+                data.complementos = JSON.parse(data.complementos)
+                return data
+            } catch {
+                Main.creating = true
+                return Swal.fire({
+                    title: 'Arte Não Encontrada!',
+                    text: 'Essa OS ainda não possui uma arte',
+                    icon: 'info',
+                    confirmButtonText: 'OK'
+                }).then(() => defaultElementsList)
+            }
+        }
+
+
 
 
 

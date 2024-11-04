@@ -67,8 +67,7 @@ export default class ElementsList {
 
   }
   loadData(elements,complements){
-    console.log(elements)
-    console.log(complements)  
+  
     this.clearData()
     elements.forEach((element,i)=>{
       element.container = "#elementContainer"+i
