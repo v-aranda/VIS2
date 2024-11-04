@@ -3,7 +3,7 @@ import ModalPositionOption from "./GraphicElements/ModalPositionOption.js";
 import FormSection from "./questions/FormSection.js";
 
 const dev_host = "http://localhost"
-const prod_host = "https://vipsportsproducao.com.br"
+const prod_host = "https://www.vipsportsproducao.com.br"
 var global_host = prod_host
 
 const defaultElementsList = {
