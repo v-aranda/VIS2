@@ -4,7 +4,7 @@ import FormSection from "./questions/FormSection.js";
 
 const dev_host = "http://localhost"
 const prod_host = "https://vipsportsproducao.com.br"
-var global_host = dev_host
+var global_host = prod_host
 
 const defaultElementsList = {
     "elementos": [
