@@ -162,7 +162,7 @@ export default class Main {
     async getFormBase(osCode) {
 
    
-            const rawData = await fetch('http://localhost/VIS2/app/Os/' + osCode)
+            const rawData = await fetch(`${global_host}/VIS2/app/Os/${osCode}`)
             const osData = await rawData.json()
             console.log(osData)
             if(!osData.art_description
