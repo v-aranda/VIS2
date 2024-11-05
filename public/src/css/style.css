@@ -11,12 +11,11 @@
    
 }
 .positionOption:hover{
-    font-weight: bolder;
-    color: #fd9813;
+    color: #007bff;
 }
 .positionOption:active{
     z-index: 4;
-    outline: #fd9813 4px solid;
+    outline: #007bff 4px solid;
     
 
 }

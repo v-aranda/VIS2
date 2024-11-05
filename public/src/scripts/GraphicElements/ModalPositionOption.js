@@ -8,7 +8,7 @@ export default class ModalPositionOption{
             const index = i
             const options = document.querySelector("#positionOptions")
             const option = document.createElement('button')
-            option.id = "position_"+index
+            option.id = "position_"+element.pos_id
             option.classList.add("col-4")
             option.classList.add("bg-white")
             option.classList.add("positionOption")

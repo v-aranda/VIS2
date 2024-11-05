@@ -141,7 +141,6 @@ export default class Main {
         Main.aditionalQuestions = await this.fetchData(`${global_host}/VIS2/app/question`)
         const rawTypes = await fetch(`${global_host}/VIS2/app/Type`)
         Main.elementsTypes = await rawTypes.json()
-        console.log(Main.aditionalQuestions)
 
         Main.formBase = await this.getFormBase(Main.osCode, copyCode)
         this.main()
@@ -195,6 +194,7 @@ export default class Main {
                     data = JSON.parse(data.mtd_data)
                     data.elementos = JSON.parse(data.elementos)
                     data.complementos = JSON.parse(data.complementos)
+             
                     return Swal.fire({
                         title: 'Arte Não Encontrada!',
                         text: 'Essa OS ainda não possui uma arte',
@@ -209,6 +209,7 @@ export default class Main {
                 Main.creating = false
                 data.elementos = JSON.parse(data.elementos)
                 data.complementos = JSON.parse(data.complementos)
+                console.log(data)
                 return data
             } catch {
                 Main.creating = true

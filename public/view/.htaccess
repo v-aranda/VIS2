@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Condições para verificar se a requisição não é para um arquivo ou diretório existente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Regra de reescrita para capturar o endpoint como pathparam 'url'
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
