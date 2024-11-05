@@ -8,11 +8,8 @@ export default class dataLoader {
 
     async getFormBase(osCode) {
        
-        const osData= await fetch(`https://www.vipsportsproducao.com.br/VIS2/app/Os/${this.osCode}`)
-        
-        
-        console.log(osData)
-        console.log(osData.body)
+        const osData= await fetch(`https://www.vipsportsproducao.com.br/VIS2/app/Os/${this.osCode}`).then(response => response.json())
+    
         console.log(osData)
         if (!osData.art_description
         ) {
