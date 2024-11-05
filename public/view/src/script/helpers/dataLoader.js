@@ -10,7 +10,7 @@ export default class dataLoader {
        
         const rawData = await fetch(this.host+`/VIS2/app/Os/${osCode}`)
         
-        console.log(rawData)
+        console.log(this.host+`/VIS2/app/Os/${osCode}`)
         const osData = await rawData.json()
         if (!osData.art_description
         ) {
