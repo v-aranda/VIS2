@@ -8,7 +8,7 @@ export default class dataLoader {
 
     async getFormBase(osCode) {
        
-        const osData= await fetch(this.host+`/VIS2/app/Os/${this.osCode}`)
+        const osData= await fetch(`https://www.vipsportsproducao.com.br/VIS2/app/Os/${this.osCode}`)
         
         
         console.log(osData)
@@ -26,7 +26,7 @@ export default class dataLoader {
             try {
                 document.querySelector("#formTitle").textContent = osData.art_description
 
-                const raw_data = await fetch(this.host+`/VIS2/app/ArtMetaData/` + osCode)
+                const raw_data = await fetch(`https://www.vipsportsproducao.com.br/VIS2/app/ArtMetaData/` + osCode)
                 let data = await raw_data.json()
                 data = JSON.parse(data.mtd_data)
 
