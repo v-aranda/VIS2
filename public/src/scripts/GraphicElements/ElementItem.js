@@ -47,7 +47,7 @@ export default class ElementItem {
     obsContainer.classList.add("d-flex")
     obsContainer.classList.add("justify-content-between")
 
-    const positionPreloadedName = Main.productPositions[this.element.elementPosition]
+    const positionPreloadedName = Main.productPositions.filter(position=> this.element.elementPosition == position.pos_id)[0]
     const positionModalButton = document.createElement("button")
     positionModalButton.textContent = positionPreloadedName? positionPreloadedName.pos_name.toUpperCase() : "Selecionar Posição"
     positionModalButton.classList.add("btn")
