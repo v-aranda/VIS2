@@ -14,7 +14,7 @@ class Main{
         this.preload()
     }
     async preload(){
-        Main.os = await new data(BASE_URL,global_host).data; 
+        Main.os = await new data(BASE_URL, global_host).data; 
         Main.types = await fetch(global_host+"/VIS2/app/Type").then(response => response.json())
         Main.positions = await fetch(global_host+"/VIS2/app/Position").then(response => response.json())
         this.loadSingleTypes(Main.os.elementos)
