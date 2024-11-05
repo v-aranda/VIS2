@@ -8,10 +8,10 @@ export default class dataLoader {
 
     async getFormBase(osCode) {
        
-        const rawData = await fetch(this.host+`/VIS2/app/Os/${osCode}`)
+        const rawData = await fetch(this.host+`/VIS2/app/Os/${this.osCode}`)
         
-        console.log(this.host+`/VIS2/app/Os/${osCode}`)
-        const osData = await rawData.json()
+        const osData = await JSON.parse(await rawData.json())
+        console.log(osData)
         if (!osData.art_description
         ) {
             return Swal.fire({
