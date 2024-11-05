@@ -8,7 +8,7 @@ export default class dataLoader {
 
     async getFormBase(osCode) {
        
-        const osData= await fetch(this.host+`/VIS2/app/Os/${this.osCode}`).then(rawData.json())
+        const osData= await fetch(this.host+`/VIS2/app/Os/${this.osCode}`).then(rawData => rawData.json())
         
         
         console.log(osData)
