@@ -8,9 +8,9 @@ export default class dataLoader {
 
     async getFormBase(osCode) {
        
-        const rawData = await fetch(this.host+`/VIS2/app/Os/${this.osCode}`)
+        const osData= await fetch(this.host+`/VIS2/app/Os/${this.osCode}`).then(rawData.json())
         
-        const osData = await JSON.parse(await rawData.json())
+        
         console.log(osData)
         if (!osData.art_description
         ) {
