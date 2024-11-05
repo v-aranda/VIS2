@@ -2,13 +2,14 @@ export default class dataLoader {
 
     constructor(code, host) {
         this.osCode = code;
+        this.hostUrl = host
         this.data = this.getFormBase(code);
-        this.host = host
+        
     }
 
     async getFormBase(osCode) {
        
-        const osData= await fetch(`https://www.vipsportsproducao.com.br/VIS2/app/Os/${this.osCode}`).then(response => response.json())
+        const osData= await fetch(this.hostUrl+`/VIS2/app/Os/${this.osCode}`).then(response => response.json())
     
         console.log(osData)
         if (!osData.art_description
@@ -23,7 +24,7 @@ export default class dataLoader {
             try {
                 document.querySelector("#formTitle").textContent = osData.art_description
 
-                const raw_data = await fetch(`https://www.vipsportsproducao.com.br/VIS2/app/ArtMetaData/` + osCode)
+                const raw_data = await fetch(this.hostUrl+`/VIS2/app/ArtMetaData/` + osCode)
                 let data = await raw_data.json()
                 data = JSON.parse(data.mtd_data)
 
