@@ -37,7 +37,7 @@ export default class dataLoader {
                     text: 'Essa OS ainda não possui uma arte',
                     icon: 'info',
                     confirmButtonText: 'OK'
-                }).then(() => history.back())
+                }).then(() => window.location = "https://www.vipsportsproducao.com.br/VIS2/public/index.php?os=" + osCode)
             }
         }
 
