@@ -1,5 +1,10 @@
 import data from './helpers/dataLoader.js';
 
+
+const dev_host = "http://localhost"
+const prod_host = "https://www.vipsportsproducao.com.br"
+var global_host = prod_host
+
 class Main{
     static os 
     static types
@@ -10,8 +15,8 @@ class Main{
     }
     async preload(){
         Main.os = await new data(BASE_URL).data; 
-        Main.types = await fetch("http://localhost/VIS2/app/Type").then(response => response.json())
-        Main.positions = await fetch("http://localhost/VIS2/app/Position").then(response => response.json())
+        Main.types = await fetch(global_host+"/VIS2/app/Type").then(response => response.json())
+        Main.positions = await fetch(global_host+"/VIS2/app/Position").then(response => response.json())
         this.loadSingleTypes(Main.os.elementos)
         this.loadComplements(Main.os.complementos)
         this.loadElements(Main.os.elementos)
