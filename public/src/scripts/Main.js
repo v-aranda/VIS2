@@ -152,7 +152,6 @@ export default class Main {
            
             Main.AdditionalInfosForm[key] = new FormSection(Main.aditionalQuestions[key], key)
         })
-        new ModalPositionOption(Main.productPositions)
         const elementsList = new ElementsList(Main.elementsTypes, Main.formBase);
 
         document.querySelector("#submitButton").addEventListener("click", () => {

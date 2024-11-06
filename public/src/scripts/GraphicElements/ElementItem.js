@@ -9,18 +9,40 @@ export default class ElementItem {
     this.index = index;
     this.elementsList = elementsList;
     this.elementsTypes = elementsTypes;
-    this.positionsList;
+    this.positionsList = [];
     this.createItem();
+
+  }
+  async setPositionButtonListner(elementType) {
+  
+      const positionsList = await fetch(`${global_host}/VIS2/app/Position/${elementType}`).then(res => res.json())
+      new ModalPositionOption(positionsList)
+      document.querySelectorAll(".positionOption").forEach(option => {
+        option.classList.remove("selected")
+        option.onclick = (e) => {
+          const selected = document.querySelector("#" + e.target.closest('button').id)
+          const button = document.querySelector("#positionButton_" + this.index)
+          button.textContent = selected.textContent.toUpperCase()
+          this.elementsList.alterPosition(this.index, selected.id.split("_")[1]);
+        }
+      })
+      const selectedPosition = document.querySelector("#position_" + this.element.elementPosition)
+      if (selectedPosition) {
+        selectedPosition.classList.add("selected")
+      }
     
   }
-
   async createItem() {
-    this.positionsList = await fetch(`${global_host}/VIS2/app/Position`).then(res => res.json())
+
+    if (this.element.typeOfElement != '-1') {
+      this.positionsList = await fetch(`${global_host}/VIS2/app/Position/${this.element.typeOfElement}`).then(res => res.json())
+    }
+
     const li = document.createElement("li");
     li.id = "elementContainer" + this.index;
     li.classList.add("p-2")
     li.classList.add("card")
-    
+
 
 
     const div = document.createElement("div");
@@ -45,20 +67,18 @@ export default class ElementItem {
         <option value="${element.ety_id}" >${element.ety_name}</option>`
     });
     // Define o valor selecionado com base no objeto
-    const selected = (typeOfElement) =>  this.elementsTypes.filter(type => type.ety_id == typeOfElement);
-   
-    typeSelect.value = this.elementsTypes.indexOf(...selected(this.element.typeOfElement)) 
-    
+    const selected = (typeOfElement) => this.elementsTypes.filter(type => type.ety_id == typeOfElement);
+
+    typeSelect.value = this.elementsTypes.indexOf(...selected(this.element.typeOfElement))
+
     const obsContainer = document.createElement("div")
     obsContainer.classList.add("col-10")
     obsContainer.classList.add("d-flex")
     obsContainer.classList.add("justify-content-between")
 
-    console.log("teste: ",this.element)
-
-    const positionPreloadedName = Main.productPositions.filter(position=> this.element.elementPosition == position.pos_id)[0]
+    const positionPreloadedName = Main.productPositions.filter(position => this.element.elementPosition == position.pos_id)[0]
     const positionModalButton = document.createElement("button")
-    positionModalButton.textContent = positionPreloadedName? positionPreloadedName.pos_name.toUpperCase() : "Selecionar Posição"
+    positionModalButton.textContent = positionPreloadedName ? positionPreloadedName.pos_name.toUpperCase() : "Selecionar Posição"
     positionModalButton.classList.add("btn")
     positionModalButton.classList.add("ml-3")
     positionModalButton.classList.add("col-4")
@@ -66,22 +86,8 @@ export default class ElementItem {
     positionModalButton.classList.add("btn-secondary");
     positionModalButton.setAttribute('data-toggle', 'modal')
     positionModalButton.setAttribute('data-target', '#exampleModal')
-    positionModalButton.onclick = () => {
-      new ModalPositionOption(this.positionsList)
-      document.querySelectorAll(".positionOption").forEach(option => {
-        option.classList.remove("selected")  
-        option.onclick = (e) => {
-          const selected = document.querySelector("#" + e.target.closest('button').id)
-          const button = document.querySelector("#positionButton_" + this.index)
-          button.textContent = selected.textContent.toUpperCase()
-          this.elementsList.alterPosition(this.index, selected.id.split("_")[1]);
-        }
-      })
-      const selectedPosition = document.querySelector("#position_"+this.element.elementPosition)
-      if(selectedPosition){
-        selectedPosition.classList.add("selected")
-      }
-    }
+
+
 
     const descriptionPreloadedValue = this.element.elementDescription
     const descriptionInput = document.createElement("input");
@@ -117,7 +123,7 @@ export default class ElementItem {
     obsContainer.appendChild(deleteButton)
     div.appendChild(obsContainer)
 
-    
+
 
     li.appendChild(div);
 
@@ -126,14 +132,20 @@ export default class ElementItem {
 
     // Adiciona os observadores de eventos
     this.addObservers(typeSelect, descriptionInput);
+    document.querySelector("#positionButton_" + this.index).onclick = () => {
+      this.setPositionButtonListner(this.element.typeOfElement)
+    }
   }
 
-  addObservers(typeSelect, descriptionInput) {
+ addObservers(typeSelect, descriptionInput) {
     typeSelect.addEventListener("change", (event) => {
+
       this.elementsList.alterType(this.index, event.target.value);
+      
+      document.querySelector("#positionButton_" + this.index).onClick = () => {
+        this.setPositionButtonListner(event.target.value)
+      }
     });
-
-
 
     descriptionInput.addEventListener("input", (event) => {
       this.elementsList.alterDescription(this.index, event.target.value);

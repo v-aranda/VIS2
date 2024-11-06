@@ -1,5 +1,6 @@
 import ElementItem from "./ElementItem.js";
 import Main from "../Main.js";
+import global_host from "../../../config.js";
 
 export default class ElementsList {
   constructor(elementTypes,defaultElements) {
@@ -25,8 +26,6 @@ export default class ElementsList {
   
     if (indexOfElement >= 0) {
       this.values[indexOfElement].typeOfElement = newType;
-      const positionsList = await fetch(`http://localhost/VIS2/app/Position`).then(res => res.json())
-      this.values[indexOfElement].positionsList = positionsList;
       const section = document.querySelector("#aditionalFormSection_"+newType)
       if(section){
         section.style.display = 'flex'
