@@ -4,9 +4,10 @@ export default class ModalPositionOption{
         this.render()
     }
     render(){
+        const options = document.querySelector("#positionOptions")
+        options.innerHTML = ""
         this.options.forEach((element, i) => {
             const index = i
-            const options = document.querySelector("#positionOptions")
             const option = document.createElement('button')
             option.id = "position_"+element.pos_id
             option.classList.add("col-4")

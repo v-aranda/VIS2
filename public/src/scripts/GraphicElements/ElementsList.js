@@ -19,14 +19,14 @@ export default class ElementsList {
     }
     return null; // Retorna null se nenhum objeto for encontrado
   }
-  alterType(index, newType) {
+  async alterType(index, newType) {
     const indexOfElement = this.values.indexOf(this.findElementByIndex(index))
     const removido = {...this.values[indexOfElement]}
-
-  
   
     if (indexOfElement >= 0) {
       this.values[indexOfElement].typeOfElement = newType;
+      const positionsList = await fetch(`http://localhost/VIS2/app/Position`).then(res => res.json())
+      this.values[indexOfElement].positionsList = positionsList;
       const section = document.querySelector("#aditionalFormSection_"+newType)
       if(section){
         section.style.display = 'flex'

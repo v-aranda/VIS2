@@ -4,7 +4,7 @@ import FormSection from "./questions/FormSection.js";
 
 const dev_host = "http://localhost"
 const prod_host = "https://www.vipsportsproducao.com.br"
-var global_host = prod_host
+var global_host = dev_host
 
 const defaultElementsList = {
     "elementos": [
@@ -117,6 +117,7 @@ function updateArtMetaData(resp, osCode) {
 export default class Main {
     static elementsTypes
     static productPositions
+    static osData
 
     static AdditionalInfosForm
     static aditionalQuestions
@@ -124,7 +125,7 @@ export default class Main {
     static formBase
     static osCode
     static creating
-    static enabledProducts = [1]
+    static enabledProducts = [1,2]
 
     constructor() {
         this.preload()
@@ -137,10 +138,13 @@ export default class Main {
         const urlParams = new URLSearchParams(window.location.search);
         Main.osCode = urlParams.get('os');
         const copyCode = urlParams.get('copy')
+
+
+        Main.osData = await this.fetchData(`${global_host}/VIS2/app/Os/` + Main.osCode)
         Main.productPositions = await this.fetchData(`${global_host}/VIS2/app/Position`)
         Main.aditionalQuestions = await this.fetchData(`${global_host}/VIS2/app/question`)
-        const rawTypes = await fetch(`${global_host}/VIS2/app/Type`)
-        Main.elementsTypes = await rawTypes.json()
+        Main.elementsTypes = await fetch(`${global_host}/VIS2/app/Type/`+Main.osData.art_product).then(res => res.json())
+        
 
         Main.formBase = await this.getFormBase(Main.osCode, copyCode)
         this.main()
@@ -165,9 +169,7 @@ export default class Main {
 
     async getFormBase(osCode, copyCode = false) {
 
-
-        const rawData = await fetch(`${global_host}/VIS2/app/Os/${osCode}`)
-        const osData = await rawData.json()
+        const osData = Main.osData
         if (!osData.art_description
         ) {
             return Swal.fire({

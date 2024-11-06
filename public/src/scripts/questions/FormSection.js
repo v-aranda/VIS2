@@ -14,13 +14,24 @@ export default class FormSection {
     }
 
     render() {
+        const elementType = Main.elementsTypes.filter(type => {
+            if( type.ety_id == this.codigo){
+                return type     
+            }
+        });
+        if (elementType.length == 0) {
+            return
+        }
         const container = document.createElement('div');
         const containerContent = document.createElement('div');
         container.id = this.id;
         // Titulo da Secção
         const containerTitle = document.createElement("header")
         const containerTitleText = document.createElement("h4")
-        const elementType = Main.elementsTypes.filter(type => type.ety_id == this.codigo);
+        
+        
+        
+    
         containerTitleText.textContent =  elementType[0].ety_name
         containerTitle.appendChild(containerTitleText)
         containerTitle.classList.add("d-flex")

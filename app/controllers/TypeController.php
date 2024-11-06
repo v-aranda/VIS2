@@ -28,7 +28,7 @@ class TypeController {
             return;
         }
         try {
-            $types = $this->typeModel->readById($id);
+            $types = $this->typeModel->readByProduct($id);
             if ($types) {
                 header('Content-Type: application/json');
                 echo json_encode($types);

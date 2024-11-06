@@ -1,14 +1,18 @@
 import Main from "../Main.js";
+import ModalPositionOption from "./ModalPositionOption.js";
 export default class ElementItem {
   constructor(element, index, elementsList, elementsTypes) {
     this.element = element;
     this.index = index;
     this.elementsList = elementsList;
-    this.elementsTypes = elementsTypes
+    this.elementsTypes = elementsTypes;
+    this.positionsList;
     this.createItem();
+    
   }
 
-  createItem() {
+  async createItem() {
+    this.positionsList = await fetch(`https://www.vipsportsproducao.com.br/VIS2/app/Position`).then(res => res.json())
     const li = document.createElement("li");
     li.id = "elementContainer" + this.index;
     li.classList.add("p-2")
@@ -47,6 +51,8 @@ export default class ElementItem {
     obsContainer.classList.add("d-flex")
     obsContainer.classList.add("justify-content-between")
 
+    console.log("teste: ",this.element)
+
     const positionPreloadedName = Main.productPositions.filter(position=> this.element.elementPosition == position.pos_id)[0]
     const positionModalButton = document.createElement("button")
     positionModalButton.textContent = positionPreloadedName? positionPreloadedName.pos_name.toUpperCase() : "Selecionar Posição"
@@ -58,7 +64,7 @@ export default class ElementItem {
     positionModalButton.setAttribute('data-toggle', 'modal')
     positionModalButton.setAttribute('data-target', '#exampleModal')
     positionModalButton.onclick = () => {
-      
+      new ModalPositionOption(this.positionsList)
       document.querySelectorAll(".positionOption").forEach(option => {
         option.classList.remove("selected")  
         option.onclick = (e) => {
