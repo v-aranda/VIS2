@@ -1,4 +1,6 @@
-let global_host = "http://localhost"
-// global_host = "https://www.vipsportsproducao.com.br" //PROD
+
+const producao = true
+let global_host = producao? "https://www.vipsportsproducao.com.br" : "http://localhost"
+
 
 export default global_host
