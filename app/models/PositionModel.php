@@ -40,11 +40,28 @@ class PositionModel {
 
     // READ - Ler um registro específico da tabela "art" pelo ID
     public function readById($id) {
+        
         try {
             $stmt = $this->pdo->prepare("SELECT * FROM elementPosition WHERE pos_id = :id");
             $stmt->bindParam(':id', $id);
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC); 
+        } catch (PDOException $e) {
+            error_log("Erro ao ler registro por ID: " . $e->getMessage());
+            throw new Exception("Erro ao ler registro da tabela elementPosition.");
+        }finally{
+            $this->pdo = null;
+        }
+    }
+
+    public function readByElementType($id) {
+        
+        try {
+            
+            $stmt = $this->pdo->prepare("SELECT elementPosition.pos_id AS pos_id, elementPosition.pos_name AS pos_name FROM ety_pos INNER JOIN elementPosition ON ety_pos.pos_id = elementPosition.pos_id WHERE ety_pos.ety_id = :id");
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC); 
         } catch (PDOException $e) {
             error_log("Erro ao ler registro por ID: " . $e->getMessage());
             throw new Exception("Erro ao ler registro da tabela elementPosition.");

@@ -29,7 +29,7 @@ class PositionController {
             return;
         }
         try {
-            $positions = $this->positionModel->readById($id);
+            $positions = $this->positionModel->readByElementType($id);
             if ($positions) {
                 header('Content-Type: application/json');
                 echo json_encode($positions);

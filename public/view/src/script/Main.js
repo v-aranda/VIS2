@@ -1,9 +1,5 @@
 import data from './helpers/dataLoader.js';
-
-
-const dev_host = "http://localhost"
-const prod_host = "https://www.vipsportsproducao.com.br"
-var global_host = prod_host
+import global_host from '../../../config.js';
 
 class Main{
     static os 
