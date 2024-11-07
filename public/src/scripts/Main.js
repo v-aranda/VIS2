@@ -122,7 +122,7 @@ export default class Main {
     static formBase
     static osCode
     static creating
-    static enabledProducts = [1,2]
+    static enabledProducts = [1]
 
     constructor() {
         this.preload()
