@@ -23,7 +23,7 @@ class PositionController {
     }
 
     // GET uri/art/{id} - Buscar um elemento específico
-    public function GETPosition($id=null) {
+    public function GETPosition($id=false) {
         if(!$id){
             $this->GETIndex();
             return;

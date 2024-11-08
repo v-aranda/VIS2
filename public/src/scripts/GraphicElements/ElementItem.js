@@ -3,6 +3,32 @@ import Main from "../Main.js";
 import ModalPositionOption from "./ModalPositionOption.js";
 
 
+class ElementButton {
+  constructor(id, styles, text, handlers) {
+    this.render
+    this.id = id;
+    this.text = text
+    this.styles = styles
+    this.handlers = handlers
+    this.createButton()
+  }
+
+  createButton() {
+    const button = document.createElement("button")
+    button.innerHTML = this.text
+    button.id = this.id
+
+    button.classList.add(...this.styles);
+
+    button.setAttribute('data-toggle', 'modal')
+    button.setAttribute('data-target', '#exampleModal')
+
+    button.onclick = () => this.handlers.forEach(handler => handler())
+    this.render = button
+  }
+}
+
+
 export default class ElementItem {
   constructor(element, index, elementsList, elementsTypes) {
     this.element = element;
@@ -14,141 +40,136 @@ export default class ElementItem {
 
   }
   async setPositionButtonListner(elementType) {
-  
-      const positionsList = await fetch(`${global_host}/VIS2/app/Position/${elementType}`).then(res => res.json())
-      new ModalPositionOption(positionsList)
-      document.querySelectorAll(".positionOption").forEach(option => {
-        option.classList.remove("selected")
-        option.onclick = (e) => {
-          const selected = document.querySelector("#" + e.target.closest('button').id)
-          const button = document.querySelector("#positionButton_" + this.index)
-          button.textContent = selected.textContent.toUpperCase()
-          this.elementsList.alterPosition(this.index, selected.id.split("_")[1]);
-        }
-      })
-      const selectedPosition = document.querySelector("#position_" + this.element.elementPosition)
-      if (selectedPosition) {
-        selectedPosition.classList.add("selected")
+
+    const positionsList = await fetch(`${global_host}/VIS2/app/Position/${Main.osData.art_product}${elementType}`).then(res => res.json())
+
+    new ModalPositionOption(positionsList, this.element.typeOfElement, Main.osData.art_product, Main.elementsTypes)
+    document.querySelectorAll(".positionOption").forEach(option => {
+      option.classList.remove("selected")
+      option.onclick = (e) => {
+        const selected = document.querySelector("#" + e.target.closest('button').id)
+        const button = document.querySelector("#positionButton_" + this.index)
+        button.textContent = selected.textContent.toUpperCase()
+        this.elementsList.alterPosition(this.index, selected.id.split("_")[1]);
       }
-    
+    })
+    const selectedPosition = document.querySelector("#position_" + this.element.elementPosition)
+    if (selectedPosition) {
+      selectedPosition.classList.add("selected")
+    }
+
   }
   async createItem() {
 
-    if (this.element.typeOfElement != '-1') {
-      this.positionsList = await fetch(`${global_host}/VIS2/app/Position/${this.element.typeOfElement}`).then(res => res.json())
-    }
-
-    const li = document.createElement("li");
-    li.id = "elementContainer" + this.index;
-    li.classList.add("p-2")
-    li.classList.add("card")
-
-
-
-    const div = document.createElement("div");
-    div.id = `element${this.index}`;
-    div.classList.add("d-flex")
-    div.classList.add("justify-content-between")
-    div.classList.add("align-items-center")
-
-
-
-    const typeSelect = document.createElement("select");
-    typeSelect.name = `type${this.index}`;
-    typeSelect.id = `type${this.index}`;
-    typeSelect.classList.add("elementType");
-    typeSelect.classList.add("custom-select");
-    typeSelect.classList.add("col-2");
-    typeSelect.innerHTML = `
-        <option value="-1" disabled selected>Selecionar</option>
-      `;
-    this.elementsTypes.forEach((element) => {
-      typeSelect.innerHTML += `
-        <option value="${element.ety_id}" >${element.ety_name}</option>`
-    });
     // Define o valor selecionado com base no objeto
     const selected = (typeOfElement) => this.elementsTypes.filter(type => type.ety_id == typeOfElement);
 
-    typeSelect.value = this.elementsTypes.indexOf(...selected(this.element.typeOfElement))
-
-    const obsContainer = document.createElement("div")
-    obsContainer.classList.add("col-10")
-    obsContainer.classList.add("d-flex")
-    obsContainer.classList.add("justify-content-between")
-
-    const positionPreloadedName = Main.productPositions.filter(position => this.element.elementPosition == position.pos_id)[0]
-    const positionModalButton = document.createElement("button")
-    positionModalButton.textContent = positionPreloadedName ? positionPreloadedName.pos_name.toUpperCase() : "Selecionar Posição"
-    positionModalButton.classList.add("btn")
-    positionModalButton.classList.add("ml-3")
-    positionModalButton.classList.add("col-4")
-    positionModalButton.id = "positionButton_" + this.index
-    positionModalButton.classList.add("btn-secondary");
-    positionModalButton.setAttribute('data-toggle', 'modal')
-    positionModalButton.setAttribute('data-target', '#exampleModal')
-
-
-
-    const descriptionPreloadedValue = this.element.elementDescription
-    const descriptionInput = document.createElement("input");
-    descriptionInput.classList.add("form-control")
-    descriptionInput.classList.add("col-6")
-    descriptionInput.type = "text";
-    descriptionInput.placeholder = "Descrição do elemento";
-    // Define o valor do input com base no objeto
-    descriptionInput.value = descriptionPreloadedValue;
-
-    const deleteButton = document.createElement("button");
-    deleteButton.id = `deleteElement${this.index}`
-    deleteButton.classList.add("btn")
-    deleteButton.classList.add("btn-danger")
-    deleteButton.classList.add("col-1")
-
-    deleteButton.innerHTML = "<i class='bi bi-x-lg'></i>"
-    deleteButton.onclick = () => this.elementsList.deleteElement(this.index)
-
-    if (this.element.typeOfElement == '-1') {
-      div.appendChild(typeSelect);
-    } else {
-      const primaryElement = document.createElement("label")
-
-      primaryElement.textContent = selected(this.element.typeOfElement)[0].ety_name
-      primaryElement.classList.add("d-flex")
-      primaryElement.classList.add("align-items-center")
-      div.appendChild(primaryElement);
-    }
-    obsContainer.appendChild(positionModalButton)
-
-    obsContainer.appendChild(descriptionInput);
-    obsContainer.appendChild(deleteButton)
-    div.appendChild(obsContainer)
-
-
-
-    li.appendChild(div);
-
     const elementsListContainer = document.getElementById("elementsListContainer");
+
+      const li = document.createElement("li");
+      li.id = "elementContainer" + this.index;
+      li.classList.add("p-2")
+      li.classList.add("card")
+
+        const div = document.createElement("div");
+        div.id = `element${this.index}`;
+        div.classList.add("d-flex")
+        div.classList.add("justify-content-between")
+        div.classList.add("align-items-center")
+
+          const obsContainer = document.createElement("div")
+          obsContainer.classList.add("col-10")
+          obsContainer.classList.add("d-flex")
+          obsContainer.classList.add("justify-content-between")
+
+            if (this.element.typeOfElement == '-1') {
+              const typeSelect = document.createElement("select");
+              typeSelect.name = `type${this.index}`;
+              typeSelect.id = `type${this.index}`;
+              typeSelect.classList.add("elementType", "custom-select", "col-2");
+
+              const option = document.createElement("option");
+              option.value = -1;
+              option.textContent = "Selecione um Elemento";
+              typeSelect.appendChild(option);
+
+              this.elementsTypes.forEach((element) => {
+                const option = document.createElement("option");
+                option.value = element.ety_id;
+                option.textContent = element.ety_name;
+                typeSelect.appendChild(option);
+              });
+              typeSelect.value = this.elementsTypes.indexOf(...selected(this.element.typeOfElement))
+
+              typeSelect.addEventListener("change", (event) => {
+
+                this.elementsList.alterType(this.index, event.target.value);
+                const button = document.querySelector("#positionButton_" + this.index)
+                button.textContent = "Selecionar Posição"
+                this.elementsList.alterPosition(this.index, '-1');
+
+                document.querySelector("#positionButton_" + this.index).onClick = () => {
+                  this.setPositionButtonListner(event.target.value)
+                }
+              });
+              div.appendChild(typeSelect);
+
+              const positionModalButton = new ElementButton(
+                `positionButton_${this.index}`,
+                ["btn-secondary", "btn", "ml-3", "col-4"],
+                "Selecione uma Posição",
+                [
+                  () => this.setPositionButtonListner(this.element.typeOfElement)
+                ]
+              )
+            obsContainer.appendChild(positionModalButton.render)} 
+            else {
+              this.positionsList = await fetch(`${global_host}/VIS2/app/Position/${Main.osData.art_product}/${this.element.typeOfElement}`).then(res => res.json())
+              
+              const primaryElement = document.createElement("label")
+              primaryElement.textContent = selected(this.element.typeOfElement)[0].ety_name
+              primaryElement.classList.add("d-flex", "align-items-center")
+              div.appendChild(primaryElement);
+
+              const positionPreloadedName = this.positionsList.filter(position => this.element.elementPosition == position.pos_id)[0].pos_name.toUpperCase()
+              const positionModalButton = new ElementButton(
+                `positionButton_${this.index}`,
+                ["btn-secondary", "btn", "ml-3", "col-4"],
+                positionPreloadedName,
+                [
+                  () => this.setPositionButtonListner(this.element.typeOfElement)
+                ]
+              )
+            obsContainer.appendChild(positionModalButton.render)}
+
+              
+
+              const descriptionInput = document.createElement("input");
+              descriptionInput.classList.add("form-control", "col-6")
+              descriptionInput.type = "text";
+              descriptionInput.placeholder = "Descrição do elemento";
+              descriptionInput.value = this.element.elementDescription;
+
+              descriptionInput.addEventListener("input", (event) => {
+                this.elementsList.alterDescription(this.index, event.target.value);
+              });
+            obsContainer.appendChild(descriptionInput);
+
+              const deleteButton = new ElementButton(
+                `deleteElement${this.index}`,
+                ["btn", "btn-danger", "col-1"],
+                "<i class='bi bi-x-lg'></i>",
+                [
+                  () => this.elementsList.deleteElement(this.index)
+                ]
+              )
+            obsContainer.appendChild(deleteButton.render)
+
+        div.appendChild(obsContainer)
+
+      li.appendChild(div);
+
     elementsListContainer.appendChild(li);
 
-    // Adiciona os observadores de eventos
-    this.addObservers(typeSelect, descriptionInput);
-    document.querySelector("#positionButton_" + this.index).onclick = () => {
-      this.setPositionButtonListner(this.element.typeOfElement)
-    }
-  }
-
- addObservers(typeSelect, descriptionInput) {
-    typeSelect.addEventListener("change", (event) => {
-
-      this.elementsList.alterType(this.index, event.target.value);
-      
-      document.querySelector("#positionButton_" + this.index).onClick = () => {
-        this.setPositionButtonListner(event.target.value)
-      }
-    });
-
-    descriptionInput.addEventListener("input", (event) => {
-      this.elementsList.alterDescription(this.index, event.target.value);
-    });
   }
 }

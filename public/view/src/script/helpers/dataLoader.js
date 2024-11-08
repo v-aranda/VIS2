@@ -30,7 +30,7 @@ export default class dataLoader {
 
                 data.elementos = JSON.parse(data.elementos)
                 data.complementos = JSON.parse(data.complementos)
-                return data
+                return [osData,data]
             } catch {
                 return Swal.fire({
                     title: 'Arte Não Encontrada!',

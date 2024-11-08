@@ -16,7 +16,12 @@ $method = $_SERVER['REQUEST_METHOD'];
 // Obter o controlador e o método da rota
 $controllerName = !empty($urlParts[0]) ? ucfirst($urlParts[0]) . 'Controller' : 'DefaultController'; 
 $methodName =  $method . ucfirst($urlParts[0]); // 'index' para a rota raiz
-$methodParam = $method !== "POST" && !empty($urlParts[1]) ? $urlParts[1] : false;
+$methodParam = $method !== "POST" && !empty($urlParts[1]) ? array_shift($urlParts): false;
+if($methodParam){
+    $methodParam =  !empty($urlParts[1]) ? $urlParts: $urlParts[0];
+}
+
+
 
 // Mensagens de erro
 $errorMessages = [
@@ -39,6 +44,7 @@ if (file_exists($controllerPath)) {
         if (method_exists($controller, $methodName)) {
 
             if($methodParam){
+                
                 call_user_func_array([$controller, $methodName], [$methodParam]);
                 return;
             }

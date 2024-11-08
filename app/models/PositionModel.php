@@ -57,12 +57,15 @@ class PositionModel {
     public function readByElementType($id) {
         
         try {
-            
-            $stmt = $this->pdo->prepare("SELECT elementPosition.pos_id AS pos_id, elementPosition.pos_name AS pos_name FROM ety_pos INNER JOIN elementPosition ON ety_pos.pos_id = elementPosition.pos_id WHERE ety_pos.ety_id = :id");
-            $stmt->bindParam(':id', $id);
+            $elementID = $id[1];
+            $productID = $id[0];
+            $stmt = $this->pdo->prepare("SELECT elementPosition.pos_id AS pos_id, elementPosition.pos_name AS pos_name FROM ety_pos INNER JOIN elementPosition ON ety_pos.pos_id = elementPosition.pos_id WHERE ety_pos.ety_id = :element AND  ety_pos.prd_id = :product");
+            $stmt->bindParam(':element', $elementID);
+            $stmt->bindParam(':product', $productID);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC); 
         } catch (PDOException $e) {
+            
             error_log("Erro ao ler registro por ID: " . $e->getMessage());
             throw new Exception("Erro ao ler registro da tabela elementPosition.");
         }finally{

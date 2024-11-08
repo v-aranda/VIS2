@@ -1,5 +1,4 @@
 import ElementsList from "./GraphicElements/ElementsList.js"
-import ModalPositionOption from "./GraphicElements/ModalPositionOption.js";
 import FormSection from "./questions/FormSection.js";
 import global_host from "../../config.js";
 
@@ -113,7 +112,6 @@ function updateArtMetaData(resp, osCode) {
 }
 export default class Main {
     static elementsTypes
-    static productPositions
     static osData
 
     static AdditionalInfosForm
@@ -122,7 +120,7 @@ export default class Main {
     static formBase
     static osCode
     static creating
-    static enabledProducts = [1]
+    static enabledProducts = [1,2]
 
     constructor() {
         this.preload()
@@ -138,7 +136,6 @@ export default class Main {
 
 
         Main.osData = await this.fetchData(`${global_host}/VIS2/app/Os/` + Main.osCode)
-        Main.productPositions = await this.fetchData(`${global_host}/VIS2/app/Position`)
         Main.aditionalQuestions = await this.fetchData(`${global_host}/VIS2/app/question`)
         Main.elementsTypes = await fetch(`${global_host}/VIS2/app/Type/`+Main.osData.art_product).then(res => res.json())
         

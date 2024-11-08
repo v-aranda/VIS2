@@ -3,20 +3,21 @@ import global_host from '../../../config.js';
 
 class Main{
     static os 
+    static art 
     static types
     static positions
-    constructor(){
-        
+    constructor(){ 
         this.preload()
     }
     async preload(){
-        Main.os = await new data(BASE_URL, global_host).data; 
-        
-        Main.types = await fetch(global_host+"/VIS2/app/Type").then(response => response.json())
+        const dados = await new data(BASE_URL, global_host).data; 
+        Main.os = dados[0]
+        Main.art = dados[1]
+        Main.types = await fetch(global_host+"/VIS2/app/Type/"+Main.os.art_product).then(response => response.json())
         Main.positions = await fetch(global_host+"/VIS2/app/Position").then(response => response.json())
-        this.loadSingleTypes(Main.os.elementos)
-        this.loadComplements(Main.os.complementos)
-        this.loadElements(Main.os.elementos)
+        this.loadSingleTypes(Main.art.elementos)
+        this.loadComplements(Main.art.complementos)
+        this.loadElements(Main.art.elementos)
 
     }
    
@@ -49,7 +50,6 @@ class Main{
         Object.keys(complements).forEach(key => {
         const container = document.getElementById(key+'complements')
         complements[key].forEach(complement => {
-            console.log(complement)
             const complementDiv = document.createElement('div')
             complementDiv.id = complement.question
             complementDiv.innerHTML = `<b>${complement.resume}</b>: ${complement.response}`
@@ -68,13 +68,18 @@ class Main{
         
         elementos.forEach(elemento => {
             const currentType = Main.types.filter(type => type.ety_id == elemento.typeOfElement)[0]
+            console.log("=================================")
+            console.log(elemento)
+            console.log(Main.positions)
+            console.log("=================================")
             const currentPosition = Main.positions.filter(position => position.pos_id == elemento.elementPosition)[0]
             
             const container = document.getElementById(elemento.typeOfElement+'elements')
             const elementLi = document.createElement('li')
             elementLi.classList.add('d-flex','flex-row','p-3')
             const elementFigure = document.createElement('img')
-            elementFigure.src = 'https://www.vipsportsproducao.com.br/VIS2/public/src/img/position'+currentPosition.pos_id+'.png'
+            console.log(currentType)
+            elementFigure.src = `http://localhost/VIS2/public/src/img/${Main.os.art_product}-${currentType.ety_id}-${currentPosition.pos_id}.png`
             elementFigure.classList.add('col-2')
             const elementDiv = document.createElement('div')
             elementDiv.classList.add('p-3')
