@@ -137,7 +137,7 @@ export default class ElementItem {
                 ["btn-secondary", "btn", "ml-3", "col-4"],
                 positionPreloadedName,
                 [
-                  () => this.setPositionButtonListner(this.element.typeOfElement)
+                  () => this.elementsList.deleteElement(this.index),
                 ]
               )
             obsContainer.appendChild(positionModalButton.render)}
