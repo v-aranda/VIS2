@@ -14,17 +14,17 @@ class ElementButton {
   }
 
   createButton() {
-    const button = document.createElement("button")
-    button.innerHTML = this.text
-    button.id = this.id
+    const buttonElemment = document.createElement("button")
+    buttonElemment.innerHTML = this.text
+    buttonElemment.id = this.id
 
-    button.classList.add(...this.styles);
+    buttonElemment.classList.add(...this.styles);
 
-    button.setAttribute('data-toggle', 'modal')
-    button.setAttribute('data-target', '#exampleModal')
+    buttonElemment.setAttribute('data-toggle', 'modal')
+    buttonElemment.setAttribute('data-target', '#exampleModal')
 
-    button.onclick = () => this.handlers.forEach(handler => handler())
-    this.render = button
+    buttonElemment.onclick = () => this.handlers.forEach(handler => handler())
+    this.render = buttonElemment
   }
 }
 
@@ -137,7 +137,7 @@ export default class ElementItem {
                 ["btn-secondary", "btn", "ml-3", "col-4"],
                 positionPreloadedName,
                 [
-                  () => this.elementsList.deleteElement(this.index),
+                  () => this.setPositionButtonListner(this.element.typeOfElement)
                 ]
               )
             obsContainer.appendChild(positionModalButton.render)}
