@@ -14,7 +14,9 @@ class ElementButton {
   }
 
   createButton() {
+
     const buttonElemment = document.createElement("button")
+    buttonElemment.onclick = none
     buttonElemment.innerHTML = this.text
     buttonElemment.id = this.id
 
