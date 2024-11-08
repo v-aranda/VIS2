@@ -1,5 +1,5 @@
 
-const producao = true
+const producao = false
 let global_host = producao? "https://www.vipsportsproducao.com.br" : "http://localhost"
 
 
