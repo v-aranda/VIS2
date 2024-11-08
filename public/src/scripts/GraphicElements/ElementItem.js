@@ -4,19 +4,25 @@ import ModalPositionOption from "./ModalPositionOption.js";
 
 
 class ElementButton {
-  constructor(id, styles, text, handlers) {
+  constructor(id, styles, text="", handlers) {
     this.render
     this.id = id;
     this.text = text
     this.styles = styles
     this.handlers = handlers
-    this.createButton()
   }
 
+}
+
+class PositionButton extends ElementButton {
+  constructor(id, styles, text, handlers) {
+    super(id, styles, text, handlers)
+    this.createButton()
+  }
   createButton() {
 
     const buttonElemment = document.createElement("button")
-    buttonElemment.onclick = none
+    buttonElemment.onclick = null
     buttonElemment.innerHTML = this.text
     buttonElemment.id = this.id
 
@@ -25,6 +31,25 @@ class ElementButton {
     buttonElemment.setAttribute('data-toggle', 'modal')
     buttonElemment.setAttribute('data-target', '#exampleModal')
 
+    
+    buttonElemment.onclick = () => this.handlers.forEach(handler => handler())
+    this.render = buttonElemment
+  }
+}
+class DeleteButton extends ElementButton {
+  constructor(id, styles, handlers) {
+    super(id, styles, "", handlers)
+    this.createButton()
+  }
+  createButton() {
+
+    const buttonElemment = document.createElement("button")
+    buttonElemment.onclick = null
+    buttonElemment.innerHTML = "<i class='bi bi-x-lg'></i>"
+    buttonElemment.id = this.id
+
+    buttonElemment.classList.add(...this.styles);
+    
     buttonElemment.onclick = () => this.handlers.forEach(handler => handler())
     this.render = buttonElemment
   }
@@ -116,10 +141,10 @@ export default class ElementItem {
               });
               div.appendChild(typeSelect);
 
-              const positionModalButton = new ElementButton(
+              const positionModalButton = new PositionButton(
                 `positionButton_${this.index}`,
                 ["btn-secondary", "btn", "ml-3", "col-4"],
-                "Selecione uma Posição",
+                "Selecionar Posição",
                 [
                   () => this.setPositionButtonListner(this.element.typeOfElement)
                 ]
@@ -134,7 +159,7 @@ export default class ElementItem {
               div.appendChild(primaryElement);
 
               const positionPreloadedName = this.positionsList.filter(position => this.element.elementPosition == position.pos_id)[0].pos_name.toUpperCase()
-              const positionModalButton = new ElementButton(
+              const positionModalButton = new PositionButton(
                 `positionButton_${this.index}`,
                 ["btn-secondary", "btn", "ml-3", "col-4"],
                 positionPreloadedName,
@@ -157,10 +182,9 @@ export default class ElementItem {
               });
             obsContainer.appendChild(descriptionInput);
 
-              const deleteButton = new ElementButton(
+              const deleteButton = new DeleteButton(
                 `deleteElement${this.index}`,
                 ["btn", "btn-danger", "col-1"],
-                "<i class='bi bi-x-lg'></i>",
                 [
                   () => this.elementsList.deleteElement(this.index)
                 ]
