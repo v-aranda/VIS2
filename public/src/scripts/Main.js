@@ -68,7 +68,7 @@ async function createArtMetaData(resp) {
 
             Swal.fire({
                 title: 'Dados Cadastrados!',
-                text: data,
+                text: 'Arte Criada com Sucesso!',
                 icon: 'success',
                 confirmButtonText: 'OK'
             })
@@ -136,6 +136,7 @@ export default class Main {
 
 
         Main.osData = await this.fetchData(`${global_host}/VIS2/app/Os/` + Main.osCode)
+        console.log(Main.osData)
         Main.aditionalQuestions = await this.fetchData(`${global_host}/VIS2/app/question`)
         Main.elementsTypes = await fetch(`${global_host}/VIS2/app/Type/`+Main.osData.art_product).then(res => res.json())
         
@@ -193,12 +194,7 @@ export default class Main {
                     data.elementos = JSON.parse(data.elementos)
                     data.complementos = JSON.parse(data.complementos)
              
-                    return Swal.fire({
-                        title: 'Arte Não Encontrada!',
-                        text: 'Essa OS ainda não possui uma arte',
-                        icon: 'info',
-                        confirmButtonText: 'OK'
-                    }).then(() => data)
+                    return data
                 }
 
                 const raw_data = await fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode)
@@ -211,12 +207,7 @@ export default class Main {
                 return data
             } catch {
                 Main.creating = true
-                return Swal.fire({
-                    title: 'Arte Não Encontrada!',
-                    text: 'Essa OS ainda não possui uma arte',
-                    icon: 'info',
-                    confirmButtonText: 'OK'
-                }).then(() => defaultElementsList)
+                return defaultElementsList
             }
         }
 

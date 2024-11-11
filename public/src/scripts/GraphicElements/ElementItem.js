@@ -1,6 +1,6 @@
 import global_host from "../../../config.js";
 import Main from "../Main.js";
-import ModalPositionOption from "./ModalPositionOption.js";
+
 
 
 class ElementButton {
@@ -86,18 +86,19 @@ export default class ElementItem {
   //   }
 
   // }
-  async setPositionButtonListner(elementType) {
-    
+  async openPositionModal(elementType) {
+    $(".positionOption.selected").removeClass("selected")
     $(`#${Main.osData.art_product}-${elementType}-${this.element.elementPosition}`).addClass("selected")
-    console.log(this.element.elementPosition)
     const lists = this.elementsList
     const index = this.index
+
     $(".element_" + elementType).off()
     $(".element_" + elementType).on("click", function () {
       $(".positionOption.selected").removeClass("selected")
       $(this).addClass("selected")
       const selected = document.querySelector(".selected")
-      lists.alterPosition(index , selected.id.split("_")[1]);
+      lists.alterPosition(index , selected.id.split("-")[2]);
+      $("#positionButton_" + index).text(selected.textContent.toUpperCase())
     })
     $(".positionOption").hide()
     $(".element_" + elementType).fadeIn()
@@ -151,7 +152,7 @@ export default class ElementItem {
         this.elementsList.alterPosition(this.index, '-1');
 
         document.querySelector("#positionButton_" + this.index).onClick = () => {
-          this.setPositionButtonListner(event.target.value)
+          this.openPositionModal(event.target.value)
         }
       });
       div.appendChild(typeSelect);
@@ -161,7 +162,7 @@ export default class ElementItem {
         ["btn-secondary", "btn", "ml-3", "col-4"],
         "Selecionar Posição",
         [
-          () => this.setPositionButtonListner(this.element.typeOfElement)
+          () => this.openPositionModal(this.element.typeOfElement)
         ]
       )
       obsContainer.appendChild(positionModalButton.render)
@@ -180,7 +181,7 @@ export default class ElementItem {
         ["btn-secondary", "btn", "ml-3", "col-4"],
         positionPreloadedName,
         [
-          () => this.setPositionButtonListner(this.element.typeOfElement)
+          () => this.openPositionModal(this.element.typeOfElement)
         ]
       )
       obsContainer.appendChild(positionModalButton.render)
