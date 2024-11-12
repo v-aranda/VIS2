@@ -31,7 +31,7 @@ export default class ModalPositionOption{
                     image.classList.add("col-12")
                     image.classList.add("p-3")
                     
-                    image.src = `http://localhost/VIS2/public/src/img/${this.product}-${element.ety_id}-${position.pos_id}.png`
+                    image.src = `https://www.vipsportsproducao.com.br//VIS2/public/src/img/${this.product}-${element.ety_id}-${position.pos_id}.png`
                     
                     option.classList.add("element_"+element.ety_id)
                     option.style.display = "none"
