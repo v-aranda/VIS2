@@ -1,18 +1,18 @@
 import ElementsList from "./GraphicElements/ElementsList.js"
 import FormSection from "./questions/FormSection.js";
 import global_host from "../../config.js";
-
+import ModalPositionOption from "./GraphicElements/ModalPositionOption.js";
 const defaultElementsList = {
     "elementos": [
         {
             "typeOfElement": "1",
-            "elementPosition": "-1",
+            "elementPosition": "2",
             "elementDescription": "",
             "container": "#elementContainer0"
         },
         {
             "typeOfElement": "2",
-            "elementPosition": "-1",
+            "elementPosition": "1",
             "elementDescription": "",
             "container": "#elementContainer1"
         }
@@ -20,12 +20,9 @@ const defaultElementsList = {
     "complementos": {}
 }
 
-async function createArt(resp, osCode) {
-    try {
-        const rawData = await fetch(`${global_host}/VIS2/app/Os/` + osCode)
-        const osData = await rawData.json()
-
-
+async function createArt(resp) {
+    try {     
+        const osData = Main.osData
         fetch(`${global_host}/VIS2/app/Art`, {
             method: 'POST',
             headers: {
@@ -52,8 +49,7 @@ async function createArt(resp, osCode) {
         console.error('Error', error);
     }
 
-}
-async function createArtMetaData(resp) {
+}async function createArtMetaData(resp) {
     fetch(`${global_host}/VIS2/app/ArtMetaData`, {
         method: 'POST',
         headers: {
@@ -64,11 +60,9 @@ async function createArtMetaData(resp) {
         .then(response => response
         )
         .then(async data => {
-
-
             Swal.fire({
                 title: 'Dados Cadastrados!',
-                text: data,
+                text: 'Arte Criada com Sucesso!',
                 icon: 'success',
                 confirmButtonText: 'OK'
             })
@@ -92,23 +86,23 @@ function updateArtMetaData(resp, osCode) {
         },
         body: JSON.stringify(resp),
     })
-        .then(response => response.json())
-        .then(data => {
-            Swal.fire({
-                title: 'Dados Atualizados!',
-                text: data.message,
-                icon: 'success',
-                confirmButtonText: 'OK'
-            })
+    .then(response => response.json())
+    .then(data => {
+        Swal.fire({
+            title: 'Dados Atualizados!',
+            text: data.message,
+            icon: 'success',
+            confirmButtonText: 'OK'
         })
-        .catch((error) => {
-            Swal.fire({
-                title: 'Falha de Atualização!',
-                text: error.message,
-                icon: 'error',
-                confirmButtonText: 'OK'
-            })
-        });
+    })
+    .catch((error) => {
+        Swal.fire({
+            title: 'Falha de Atualização!',
+            text: error.message,
+            icon: 'error',
+            confirmButtonText: 'OK'
+        })
+    });
 }
 export default class Main {
     static elementsTypes
@@ -125,24 +119,36 @@ export default class Main {
     constructor() {
         this.preload()
     }
+
     async fetchData(url) {
         let raw = await fetch(url)
         return await raw.json()
     }
+
     async preload() {
         const urlParams = new URLSearchParams(window.location.search);
-        Main.osCode = urlParams.get('os');
+        
         const copyCode = urlParams.get('copy')
+        
 
-
-        Main.osData = await this.fetchData(`${global_host}/VIS2/app/Os/` + Main.osCode)
+        Main.osData = {
+            "art_os": urlParams.get('artCode'),
+            "art_description": urlParams.get('artName'),
+            "art_product": urlParams.get('artProduct')
+        }
+        Main.osCode = Main.osData.art_os;
+        console.log(Main.osData)
         Main.aditionalQuestions = await this.fetchData(`${global_host}/VIS2/app/question`)
         Main.elementsTypes = await fetch(`${global_host}/VIS2/app/Type/`+Main.osData.art_product).then(res => res.json())
+        
+        
+        new ModalPositionOption(Main.elementsTypes, Main.osData.art_product)
         
 
         Main.formBase = await this.getFormBase(Main.osCode, copyCode)
         this.main()
     }
+
     async main() {
         Main.AdditionalInfosForm = {}
         Object.keys(Main.aditionalQuestions).forEach(key => {
@@ -190,12 +196,7 @@ export default class Main {
                     data.elementos = JSON.parse(data.elementos)
                     data.complementos = JSON.parse(data.complementos)
              
-                    return Swal.fire({
-                        title: 'Arte Não Encontrada!',
-                        text: 'Essa OS ainda não possui uma arte',
-                        icon: 'info',
-                        confirmButtonText: 'OK'
-                    }).then(() => data)
+                    return data
                 }
 
                 const raw_data = await fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode)
@@ -204,23 +205,12 @@ export default class Main {
                 Main.creating = false
                 data.elementos = JSON.parse(data.elementos)
                 data.complementos = JSON.parse(data.complementos)
-                console.log(data)
                 return data
             } catch {
                 Main.creating = true
-                return Swal.fire({
-                    title: 'Arte Não Encontrada!',
-                    text: 'Essa OS ainda não possui uma arte',
-                    icon: 'info',
-                    confirmButtonText: 'OK'
-                }).then(() => defaultElementsList)
+                return defaultElementsList
             }
         }
-
-
-
-
-
     }
 
     submitHandler(elementsList) {
@@ -247,7 +237,7 @@ export default class Main {
             }
 
             if (Main.creating) {
-                createArt(retorno, Main.osCode)
+                createArt(retorno)
             } else {
                 updateArtMetaData(retorno, Main.osCode)
             }
@@ -259,7 +249,6 @@ export default class Main {
                 confirmButtonText: 'CORRIGIR'
             })
         }
-
     }
 }
 

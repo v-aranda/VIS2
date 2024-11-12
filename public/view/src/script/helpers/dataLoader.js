@@ -9,7 +9,7 @@ export default class dataLoader {
 
     async getFormBase(osCode) {
        
-        const osData= await fetch(this.hostUrl+`/VIS2/app/Os/${this.osCode}`).then(response => response.json())
+        const osData= await fetch(this.hostUrl+`/VIS2/app/Art/${this.osCode}`).then(response => response.json())
     
         console.log(osData)
         if (!osData.art_description
@@ -31,7 +31,7 @@ export default class dataLoader {
                 data.elementos = JSON.parse(data.elementos)
                 data.complementos = JSON.parse(data.complementos)
                 return [osData,data]
-            } catch {
+            }catch {
                 return Swal.fire({
                     title: 'Arte Não Encontrada!',
                     text: 'Essa OS ainda não possui uma arte',
