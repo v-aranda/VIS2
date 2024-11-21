@@ -2,6 +2,10 @@ import ElementsList from "./GraphicElements/ElementsList.js"
 import FormSection from "./questions/FormSection.js";
 import global_host from "../../config.js";
 import ModalPositionOption from "./GraphicElements/ModalPositionOption.js";
+
+
+const parent = window.parent.document.getElementById("iframeVis2")
+const urlParams = new URLSearchParams(parent.src);
 const defaultElementsList = {
     "1" : {
         "elementos": [
@@ -91,6 +95,10 @@ async function createArt(resp) {
 
         });
 }
+function throwBackToParent(resp){
+
+    window.parent.objFormEspecificacoes = JSON.stringify(resp)
+}
 function updateArtMetaData(resp, osCode) {
     fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode, {
         method: 'PUT',
@@ -139,27 +147,23 @@ export default class Main {
     }
 
     async preload() {
-        const urlParams = new URLSearchParams(window.location.search);
-        
-        const copyCode = urlParams.get('copy')
-        
 
         Main.osData = {
-            "art_os": urlParams.get('artCode'),
+            "art_os": urlParams.get('codItem'),
             "art_description": urlParams.get('artName'),
             "art_subtitle": urlParams.get('artEspec'),
-            "art_product": urlParams.get('artProduct')
+            "art_product": urlParams.get('artProduct'),
+            "copyCode": urlParams.get('copyCode') ? urlParams.get('copyCode') : false,
+            "art_object": urlParams.get('obj')
         }
         Main.osCode = Main.osData.art_os;
         Main.aditionalQuestions = await this.fetchData(`${global_host}/VIS2/app/question`)
         Main.elementsTypes = await fetch(`${global_host}/VIS2/app/Type/`+Main.osData.art_product).then(res => res.json())
         
-        
         new ModalPositionOption(Main.elementsTypes, Main.osData.art_product)
-        
 
-        Main.formBase = await this.getFormBase(Main.osCode, copyCode)
-        console.log(Main.formBase)
+        Main.formBase = await this.getFormBase()
+        
         this.main()
     }
 
@@ -180,7 +184,10 @@ export default class Main {
         
     }
 
-    async getFormBase(osCode, copyCode = false) {
+    async getFormBase() {
+
+        const osCode = Main.osData["art_os"]
+        
 
         const osData = Main.osData
         if (!osData.art_description
@@ -202,6 +209,7 @@ export default class Main {
             try {
                 document.querySelector("#formTitle").textContent = osData.art_description
                 document.querySelector("#formSubTitle").textContent = osData.art_subtitle
+                const copyCode = Main.osData["copyCode"]
 
                 if (copyCode) {
                     Main.creating = true
@@ -214,19 +222,23 @@ export default class Main {
                     return data
                 }
 
-                const raw_data = await fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode)
-                let data = await raw_data.json()
-                data = JSON.parse(data.mtd_data)
+                const raw_data = Main.osData["art_object"]
+                console.log(raw_data)
+                let data = JSON.parse(raw_data)
                 Main.creating = false
+
                 data.elementos = JSON.parse(data.elementos)
                 data.complementos = JSON.parse(data.complementos)
+                
                 return data
-            } catch {
+            } catch (e){
+                console.log(e)
                 Main.creating = true
                 return defaultElementsList[osData.art_product]
             }
         }
     }
+
 
     submitHandler(elementsList) {
 
@@ -252,9 +264,9 @@ export default class Main {
             }
 
             if (Main.creating) {
-                createArt(retorno)
+                throwBackToParent(retorno)
             } else {
-                updateArtMetaData(retorno, Main.osCode)
+                throwBackToParent(retorno)
             }
         } catch (e) {
             Swal.fire({
