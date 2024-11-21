@@ -66,26 +66,7 @@ export default class ElementItem {
     this.createItem();
 
   }
-  // async setPositionButtonListner(elementType) {
 
-  //   const positionsList = await fetch(`${global_host}/VIS2/app/Position/${Main.osData.art_product}${elementType}`).then(res => res.json())
-
-  //   new ModalPositionOption(positionsList, this.element.typeOfElement, Main.osData.art_product, Main.elementsTypes)
-  //   document.querySelectorAll(".positionOption").forEach(option => {
-  //     option.classList.remove("selected")
-  //     option.onclick = (e) => {
-  //       const selected = document.querySelector("#" + e.target.closest('button').id)
-  //       const button = document.querySelector("#positionButton_" + this.index)
-  //       button.textContent = selected.textContent.toUpperCase()
-  //       this.elementsList.alterPosition(this.index, selected.id.split("_")[1]);
-  //     }
-  //   })
-  //   const selectedPosition = document.querySelector("#position_" + this.element.elementPosition)
-  //   if (selectedPosition) {
-  //     selectedPosition.classList.add("selected")
-  //   }
-
-  // }
   async openPositionModal(elementType) {
     $(".positionOption.selected").removeClass("selected")
     $(`#${Main.osData.art_product}-${elementType}-${this.element.elementPosition}`).addClass("selected")
