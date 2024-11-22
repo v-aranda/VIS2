@@ -1,3 +1,3 @@
 <?php
 
-require_once 'index.html';
+include 'index.html';
