@@ -227,7 +227,7 @@ export default class Main {
 
                 const raw_data = Main.osData["art_object"]
                 
-                let data = raw_data
+                let data = JSON.parse(raw_data)
                 console.log(typeof(data))
                 Main.creating = false
 
