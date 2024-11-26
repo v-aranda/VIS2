@@ -11,15 +11,9 @@ const defaultElementsList = {
         "elementos": [
             {
                 "typeOfElement": "1",
-                "elementPosition": "2",
+                "elementPosition": "-1",
                 "elementDescription": "",
                 "container": "#elementContainer0"
-            },
-            {
-                "typeOfElement": "2",
-                "elementPosition": "1",
-                "elementDescription": "",
-                "container": "#elementContainer1"
             }
         ],
         "complementos": {}
@@ -98,6 +92,12 @@ async function createArt(resp) {
 function throwBackToParent(resp){
 
     window.parent.objFormEspecificacoes = JSON.stringify(resp)
+    return Swal.fire({
+        title: 'Dados Atualizados!',
+        text: data.message,
+        icon: 'success',
+        confirmButtonText: 'OK'
+    })
 }
 function updateArtMetaData(resp, osCode) {
     fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode, {
@@ -109,12 +109,7 @@ function updateArtMetaData(resp, osCode) {
     })
     .then(response => response.json())
     .then(data => {
-        Swal.fire({
-            title: 'Dados Atualizados!',
-            text: data.message,
-            icon: 'success',
-            confirmButtonText: 'OK'
-        })
+        
     })
     .catch((error) => {
         Swal.fire({
