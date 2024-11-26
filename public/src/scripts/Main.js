@@ -255,6 +255,7 @@ export default class Main {
                 elementos: JSON.stringify(elementos),
                 complementos: JSON.stringify(complements),
             }
+            console.log("data:", data);
             const retorno = {
                 mtd_art: Main.osCode,
                 mtd_data: JSON.stringify(data)
