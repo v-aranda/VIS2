@@ -60,7 +60,8 @@ async function createArt(resp) {
         console.error('Error', error);
     }
 
-}async function createArtMetaData(resp) {
+}
+async function createArtMetaData(resp) {
     fetch(`${global_host}/VIS2/app/ArtMetaData`, {
         method: 'POST',
         headers: {
@@ -89,16 +90,6 @@ async function createArt(resp) {
 
         });
 }
-function throwBackToParent(resp){
-
-    window.parent.objFormEspecificacoes = JSON.stringify(resp)
-    return Swal.fire({
-        title: 'Dados Atualizados!',
-        text: data.message,
-        icon: 'success',
-        confirmButtonText: 'OK'
-    })
-}
 function updateArtMetaData(resp, osCode) {
     fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode, {
         method: 'PUT',
@@ -120,6 +111,17 @@ function updateArtMetaData(resp, osCode) {
         })
     });
 }
+function throwBackToParent(resp){
+
+    window.parent.objFormEspecificacoes = JSON.stringify(resp)
+    return Swal.fire({
+        title: 'Dados Atualizados!',
+        text: data.message,
+        icon: 'success',
+        confirmButtonText: 'OK'
+    })
+}
+
 export default class Main {
     static elementsTypes
     static osData
