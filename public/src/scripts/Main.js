@@ -229,8 +229,8 @@ export default class Main {
                 let data = raw_data
                 Main.creating = false
 
-                data.elementos = JSON.parse(data.elementos)
-                data.complementos = JSON.parse(data.complementos)
+                // data.elementos = JSON.parse(data.elementos)
+                // data.complementos = JSON.parse(data.complementos)
                 
                 return data
             } catch (e){
