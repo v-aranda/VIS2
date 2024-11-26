@@ -155,8 +155,11 @@ export default class ElementItem {
       primaryElement.textContent = selected(this.element.typeOfElement)[0].ety_name
       primaryElement.classList.add("d-flex", "align-items-center")
       div.appendChild(primaryElement);
-
-      const positionPreloadedName = this.positionsList.filter(position => this.element.elementPosition == position.pos_id)[0].pos_name.toUpperCase()
+      if(this.element.elementPosition != '-1'){
+        const positionPreloadedName = this.positionsList.filter(position => this.element.elementPosition == position.pos_id)[0].pos_name.toUpperCase()
+      }else{
+        const positionPreloadedName = "Selecionar Posição"
+      }
       const positionModalButton = new PositionButton(
         `positionButton_${this.index}`,
         ["btn-secondary", "btn", "ml-3", "col-4"],
