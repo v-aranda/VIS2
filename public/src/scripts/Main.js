@@ -113,13 +113,18 @@ function updateArtMetaData(resp, osCode) {
 }
 function throwBackToParent(resp){
 
-    window.parent.objFormEspecificacoes = JSON.stringify(resp)
-    return Swal.fire({
-        title: 'Dados Atualizados!',
-        text: data.message,
-        icon: 'success',
-        confirmButtonText: 'OK'
-    })
+    try{
+        window.parent.objFormEspecificacoes = JSON.stringify(resp)
+        console.log(window.parent.objFormEspecificacoes)
+        return Swal.fire({
+            title: 'Dados Atualizados!',
+            text: "Dados Salvos com Sucesso!",
+            icon: 'success',
+            confirmButtonText: 'OK'
+        })  
+    }catch{
+        throw new Error("Erro ao Retornar Dados!")
+    }
 }
 
 export default class Main {
@@ -252,14 +257,11 @@ export default class Main {
             })
 
             const data = {
-                elementos: JSON.stringify(elementos),
-                complementos: JSON.stringify(complements),
+                elementos: elementos,
+                complementos: complements,
             }
             console.log("data:", data);
-            const retorno = {
-                mtd_art: Main.osCode,
-                mtd_data: JSON.stringify(data)
-            }
+            const retorno = data
 
             if (Main.creating) {
                 throwBackToParent(retorno)
@@ -267,6 +269,7 @@ export default class Main {
                 throwBackToParent(retorno)
             }
         } catch (e) {
+            console.log(e)
             Swal.fire({
                 title: 'Informação Inconsistente!',
                 text: e.message,

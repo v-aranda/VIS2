@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <iframe id="iframeVis2" style="width: 100%; height: 95vh" src="https://www.vipsportsproducao.com.br/VIS2/public/index.php?codItem=1&artName=TESTE VINI&artEspec=CAMISA | ALGODÃO | CINZA&artProduct=1&obj=" frameborder="0"></iframe>
+    <iframe id="iframeVis2" style="width: 100%; height: 95vh" src="../index.php?codItem=1&artName=TESTE VINI&artEspec=CAMISA | ALGODÃO | CINZA&artProduct=1&obj=" frameborder="0"></iframe>
         <button onclick="mostraValor()">
             objeto
         </button>
