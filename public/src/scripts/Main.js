@@ -226,8 +226,9 @@ export default class Main {
                 }
 
                 const raw_data = Main.osData["art_object"]
-                console.log(raw_data)
+                
                 let data = raw_data
+                console.log(typeof(data))
                 Main.creating = false
 
                 if (data === null) {
