@@ -165,6 +165,7 @@ export default class Main {
         new ModalPositionOption(Main.elementsTypes, Main.osData.art_product)
 
         Main.formBase = await this.getFormBase()
+        console.log("Base:",Main.formBase)
         
         this.main()
     }
