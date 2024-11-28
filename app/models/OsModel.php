@@ -24,7 +24,7 @@ class OsModel {
     // READ - Ler um registro específico da tabela "t_servicos" pelo ID
     public function readById($os) {
         try {
-            $stmt = $this->pdo->prepare("SELECT * FROM t_servicos WHERE cod_servico = :os");
+            $stmt = $this->pdo->prepare("SELECT obj_form_atendimento, cod_produto, desc_servico FROM t_servicos WHERE cod_servico = :os");
             $stmt->bindParam(':os', $os);
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC); 

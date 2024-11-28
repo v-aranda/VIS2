@@ -10,9 +10,9 @@ export default class dataLoader {
     async getFormBase(osCode) {
        
         const osData= await fetch(this.hostUrl+`/VIS2/app/Art/${this.osCode}`).then(response => response.json())
-    
+        
         console.log(osData)
-        if (!osData.art_description
+        if (!osData.obj_form_atendimento
         ) {
             return Swal.fire({
                 title: 'Os não encontrada!',
@@ -22,16 +22,18 @@ export default class dataLoader {
             }).then(() => history.back())
         } else {
             try {
-                document.querySelector("#formTitle").textContent = osData.art_description
+                document.querySelector("#formTitle").textContent = osData.desc_servico
+                const data = JSON.parse(osData.obj_form_atendimento)
 
-                const raw_data = await fetch(this.hostUrl+`/VIS2/app/ArtMetaData/` + osCode)
-                let data = await raw_data.json()
-                data = JSON.parse(data.mtd_data)
-
-                data.elementos = JSON.parse(data.elementos)
-                data.complementos = JSON.parse(data.complementos)
-                return [osData,data]
-            }catch {
+                // data.elementos = JSON.parse(data.elementos)
+                // data.complementos = JSON.parse(data.complementos)
+                const infos = {
+                    art_product: osData.cod_produto,
+                    art_description: osData.desc_servico
+                }
+                return [infos,data]
+            }catch(e) {
+                console.log(e)
                 return Swal.fire({
                     title: 'Arte Não Encontrada!',
                     text: 'Essa OS ainda não possui uma arte',

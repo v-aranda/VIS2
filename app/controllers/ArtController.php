@@ -1,13 +1,15 @@
 <?php
 include 'models/ArtModel.php';
+include 'models/OsModel.php';
 // ... (Classes ConnectionTo e ArtModel) ...
 
 class ArtController {
 
-    private $artModel;
+    private $artModel, $OsModel;
 
     public function __construct() {
         $this->artModel = new ArtModel('vipspo66_VIP_MODELINGS'); 
+        $this->OsModel = new OsModel('vipspo66_producao'); 
     }
 
     // GET uri/art - Obter todos os elementos
@@ -29,7 +31,7 @@ class ArtController {
             return;
         }
         try {
-            $art = $this->artModel->readById($id);
+            $art = $this->OsModel->readById($id);
             if ($art) {
                 header('Content-Type: application/json');
                 echo json_encode($art);
