@@ -36,10 +36,24 @@
             flex-direction: column;
             gap: 5px;
         }
+        #loader{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            display: none;
+        }
+        #loader.loading{
+            display: flex;
+        }
+
     </style>
 </head>
 
 <body>
+<div class="text-center bg-secondary" id="loader">
+            <div class="spinner-border" role="status">
+            </div>
+        </div>
     <!-- CONTAINER -->
     <div id="exampleModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -87,11 +101,7 @@
             </h2>
 
         </section>
-        <div class="text-center bg-secondary" id="loader">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
+        
 
 
 
