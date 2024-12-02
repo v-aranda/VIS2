@@ -1,0 +1,721 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1733147632103,
+    "data": [
+        {
+            "type": "folder",
+            "name": "app"
+        },
+        {
+            "type": "folder",
+            "name": "public"
+        },
+        {
+            "type": "file",
+            "name": "app/.htaccess",
+            "size": 296,
+            "hash": "8cfe28d380444df8e25aae3220e408380fe525b8d9275fe71835672e356c38fe"
+        },
+        {
+            "type": "file",
+            "name": "app/config.php",
+            "size": 197,
+            "hash": "1ebb3cb9ee72da7c41fdcd24e890f87f4e7b27a595d6d0e9dea8dd7c19295b3b"
+        },
+        {
+            "type": "folder",
+            "name": "app/controllers"
+        },
+        {
+            "type": "folder",
+            "name": "app/database"
+        },
+        {
+            "type": "file",
+            "name": "app/index.php",
+            "size": 2271,
+            "hash": "98814d4f63f77849267b029618ad63ebf10ce9e74a0002bbfa70e9fa7821c291"
+        },
+        {
+            "type": "folder",
+            "name": "app/models"
+        },
+        {
+            "type": "file",
+            "name": "public/config.js",
+            "size": 139,
+            "hash": "0e93e630e2da1e76286763a046cdc82e435e1d9d17f6a7f252c9af166abbfb6d"
+        },
+        {
+            "type": "folder",
+            "name": "public/img"
+        },
+        {
+            "type": "file",
+            "name": "public/index.php",
+            "size": 3452,
+            "hash": "4c88fc038f0dfc4a997e36149590a6cd2317d78508ec1a36cf2f288a51213d41"
+        },
+        {
+            "type": "folder",
+            "name": "public/src"
+        },
+        {
+            "type": "folder",
+            "name": "public/teste"
+        },
+        {
+            "type": "folder",
+            "name": "public/view"
+        },
+        {
+            "type": "file",
+            "name": "app/controllers/ArtMetaDataController.php",
+            "size": 4098,
+            "hash": "2f562a038e94d591e972d62858e3041c603a1d882255bfec89b4e88e28d1cc64"
+        },
+        {
+            "type": "file",
+            "name": "app/controllers/ArtController.php",
+            "size": 4186,
+            "hash": "ed5ba48ad5cc980a8819afefd2da6dc970868f311bab8fba3610e91ca3cfb2f4"
+        },
+        {
+            "type": "file",
+            "name": "app/controllers/DISABLED_ElementController.php",
+            "size": 4654,
+            "hash": "e19fa273c7d59d4ff9d60ead17590ae0743b99de24835d1198c3a79c0a7351c8"
+        },
+        {
+            "type": "file",
+            "name": "app/controllers/OsController.php",
+            "size": 1860,
+            "hash": "0b4cea50f3174680ab2a53f436dcda4dfa432acc3b439e9534e8385ab74ae6cc"
+        },
+        {
+            "type": "file",
+            "name": "app/controllers/PositionController.php",
+            "size": 4029,
+            "hash": "927f60c4deac5fa0bfb60e5865ffcfb3d3cb2e1a43b7313e3479e3d0b35587ba"
+        },
+        {
+            "type": "file",
+            "name": "app/controllers/ProductController.php",
+            "size": 3953,
+            "hash": "71ed53ede9f327c1c11613efb1ad940ec89043f4411d80f6942146794173f13f"
+        },
+        {
+            "type": "file",
+            "name": "app/controllers/QuestionController.php",
+            "size": 1798,
+            "hash": "d50c785358b83bcfd6e549cd6df8bd01bf1237dd9fc68d76117d1ef24204c7fd"
+        },
+        {
+            "type": "file",
+            "name": "app/controllers/TypeController.php",
+            "size": 3895,
+            "hash": "145f40b3963a7094b4285b3151aba964510207e658b97a1766c7118b324d27ca"
+        },
+        {
+            "type": "file",
+            "name": "app/database/ConnectionTo.php",
+            "size": 726,
+            "hash": "ab49d21d3ffaa9581fcbc8266cf9d68a7ab82f503f29b0a618eadb919444ff26"
+        },
+        {
+            "type": "file",
+            "name": "app/models/ArtMetaDataModel.php",
+            "size": 3360,
+            "hash": "44bb358a9e1e07eebee6e5f23a996db3b75f577eaf6dcdf1ca6a8beb185074e7"
+        },
+        {
+            "type": "file",
+            "name": "app/models/ArtModel.php",
+            "size": 3334,
+            "hash": "78d6ea80007a054b52c8386e20c0814eb9d3e5fd6c1e8b5fc14bf7956df661c9"
+        },
+        {
+            "type": "file",
+            "name": "app/models/OsModel.php",
+            "size": 1303,
+            "hash": "e052d2be6085830ec027a3edac31e56b9ff9dbcba98da3c340d291fd79883cb2"
+        },
+        {
+            "type": "file",
+            "name": "app/models/PositionModel.php",
+            "size": 4038,
+            "hash": "d58148128c6a1b507336c486f26c3160d02437068d7cdd676e2ab760365a36d0"
+        },
+        {
+            "type": "file",
+            "name": "app/models/ProductModel.php",
+            "size": 3024,
+            "hash": "ce04a3a9cf551fd9ca0bfd2529e22a39419dfe113c9b1129baf8b6d5b3a82eb3"
+        },
+        {
+            "type": "file",
+            "name": "app/models/TypeModel.php",
+            "size": 3832,
+            "hash": "116ede2c273c28f6ba024297a39cac5d71e2fbb25e5fdb02697ea740a8ab2077"
+        },
+        {
+            "type": "file",
+            "name": "public/img/bouncing-circles (1).svg",
+            "size": 803,
+            "hash": "f635091a5b020bc0868d3d29bde9494ad3eca18ad33865b1db180a25ec7c4358"
+        },
+        {
+            "type": "folder",
+            "name": "public/src/css"
+        },
+        {
+            "type": "folder",
+            "name": "public/src/img"
+        },
+        {
+            "type": "folder",
+            "name": "public/src/scripts"
+        },
+        {
+            "type": "file",
+            "name": "public/teste/index.php",
+            "size": 668,
+            "hash": "78452056ff754470dad937bb6852daf4d5bd700a7f3fe5bfcfbd8d67035db251"
+        },
+        {
+            "type": "file",
+            "name": "public/view/.htaccess",
+            "size": 296,
+            "hash": "8cfe28d380444df8e25aae3220e408380fe525b8d9275fe71835672e356c38fe"
+        },
+        {
+            "type": "file",
+            "name": "public/view/index.php",
+            "size": 1422,
+            "hash": "96585085278d41bafaa8522d1e720efa4f6ed23221fde5ebb2bfdfc70443d205"
+        },
+        {
+            "type": "folder",
+            "name": "public/view/src"
+        },
+        {
+            "type": "file",
+            "name": "public/src/css/style.css",
+            "size": 341,
+            "hash": "84c43b814a8489277ffc0f13fe4ba06a7b96a6722ebb3e5df752455a8406a3f9"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-1.png",
+            "size": 154388,
+            "hash": "923a08a5fe238bb7149c1fb0644c201bd08a9600c050b01cb359710d4821b32e"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-10.png",
+            "size": 169606,
+            "hash": "f4980805af0319a8f7fe0ae9e20db4f4bfa9c8ce9168b5735e8dfd3f871e88b7"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-11.png",
+            "size": 139004,
+            "hash": "bedd05604b96eaca43f2c51c1a532ce6e0b003b82e95251aa10d5ca4394a6e5f"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-12.png",
+            "size": 157048,
+            "hash": "10632d063511200bee1b4dbaab0cf93c5fef5c26ef118a6fec8f580761fcb1ef"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-13.png",
+            "size": 148584,
+            "hash": "47ac75c2a133c1710aebbd87f994f42def075fd00a2e49a49eda18b86ad724b9"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-14.png",
+            "size": 147876,
+            "hash": "50cec81ecd537e3f313d71e6181ccd9167f1b5b045082911782e3d6b6549a11e"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-15.png",
+            "size": 153828,
+            "hash": "524446239dfe691b14f7dd4a69554c9d127ba1db0d96dfeee2082b509f58c4ff"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-2.png",
+            "size": 153360,
+            "hash": "36a70393da0288971c4b943b059cfbfa37797526ade749a611227f0eed34572d"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-3.png",
+            "size": 153507,
+            "hash": "0812d5928adca1b971e081591a8173ed7ddaf39ddd2176e244fcef9da4775c01"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-4.png",
+            "size": 169197,
+            "hash": "f9c52a1d050363860bb63f00947cfabac18b5482de1870e22cd0678e8d87daa2"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-5.png",
+            "size": 154786,
+            "hash": "06c3f47cd5f3c4835b5da570f9227dc8e561e028950ba8d1896f9452f58c1126"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-6.png",
+            "size": 153977,
+            "hash": "d9cd16d42ccd47389ce275fa082adda529288bc6bdb79c271fad69d1ee9d89ba"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-7.png",
+            "size": 151203,
+            "hash": "0c08a895c4760338b8b69513411c2f187d0753deab41e9911ad085828728189c"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-8.png",
+            "size": 152046,
+            "hash": "d13dee2d1190ad8aab52031b29fb3bf30293242b45c0ece4a426c53d794c6316"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-1-9.png",
+            "size": 139800,
+            "hash": "7cdf568bbc1bca2c9339dbe466a505113708be2175129a2cd33f112ca3e3735c"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-2-1.png",
+            "size": 147239,
+            "hash": "04c22ad67480aa2fd305e05f862f0183e20d20e6c5739fcbe0ec03d8e2d3b026"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-2-12.png",
+            "size": 139203,
+            "hash": "335c5c07960493941ca26b57dc61ae6d707f92de39e2fb2e7ca95b01f4b6c6d2"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-2-15.png",
+            "size": 147134,
+            "hash": "f3e5cc0bcad04bf47c840f3d0c37689eb96bc6afe4fd9e9b3258456af41ececc"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-2-2.png",
+            "size": 147246,
+            "hash": "52deb1764264e88dc2292275756b5e15b3e1ea98e1ab387b4bbe56cd7e9a456a"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-2-3.png",
+            "size": 147255,
+            "hash": "85927934468a7edd3f03e18c59764f9adf7a318bdfba913fcc5148b5a800590d"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-2-7.png",
+            "size": 146435,
+            "hash": "4b015c07e0db2b1480c34354046fae9080a347738cf8dcf5e2a1f90a1760fe18"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-2-8.png",
+            "size": 147037,
+            "hash": "5d6c8b3c7da7ae91f2b6abe800ccd2f86fd360be95cca07602f53364faf32510"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-3-11.png",
+            "size": 138223,
+            "hash": "44b68d04f87de56c29f8e2bcfae85fbb5fb8966549d72e50295d583ada2e73fa"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-3-9.png",
+            "size": 139837,
+            "hash": "7c76376a13b2ab9860af1aa4f9850bdaf369d95b64427f035c8d750462fe2018"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-1.png",
+            "size": 158525,
+            "hash": "498a3519a605b127f48e029a17e17182b9270726224f2523a70ea4a6f7bbaf5f"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-10.png",
+            "size": 173847,
+            "hash": "f662d6e352cbcaacc00a7379a4b50d150fb5f625f49bf314dbe0099cd7407742"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-11.png",
+            "size": 143073,
+            "hash": "61c61229acfa2e13bb3d7e62da6225a895ef14937c49c9cdf36d8b2f1ba953b8"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-12.png",
+            "size": 161173,
+            "hash": "043888b969b1f29ae027b0ee40706bbd550aaf5b515a9a5f6a684d799400db5f"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-13.png",
+            "size": 151893,
+            "hash": "16155112bc0dc477a1505b845625d288ecc72a5937c6bbde3d18e973b49c7f74"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-14.png",
+            "size": 151704,
+            "hash": "6099470b3b18fcd4bea325dcbd69178b9140d68a5c9ce724352af6a7f4e55db9"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-15.png",
+            "size": 161228,
+            "hash": "b831adc205a433576bde8b9ed941112e990ef0b1c512af368c4bace0542bb006"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-2.png",
+            "size": 155487,
+            "hash": "476fce7518183923f70796809efddb472f26f77f55261b65c5051e453d07bfff"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-3.png",
+            "size": 155591,
+            "hash": "0d10575646c933b88fd38df75cc381eadeef2dd5d7d01ee5174ea5f5460ce0ed"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-4.png",
+            "size": 170449,
+            "hash": "8b4560fbc24dbd45aa28156503bac3b96c4b3d10cc998434befd820835e3d725"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-5.png",
+            "size": 154249,
+            "hash": "bd39ccb0d639be34b3f34e38c53e9ba5033ee32bb4512fcefcb4ef9d9d142d80"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-6.png",
+            "size": 154645,
+            "hash": "e27f516e434a05452c5f666d6754108eec2c3e402749d72ab7dc44d4a0bba0ff"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-7.png",
+            "size": 154782,
+            "hash": "87b10637b43356ad7dc4a5674b9a6b8f9ed76566d75809c0b8b8bc8cee4b7742"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-8.png",
+            "size": 155373,
+            "hash": "53a490c0d694775cc5640cf76becb20ab4c3d26863026e2236a472d1066a868c"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-4-9.png",
+            "size": 142792,
+            "hash": "7db79c2782da777e3d224820d33fb7e47c3d2080841478ccd23cdf4fb941ab89"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-1.png",
+            "size": 149280,
+            "hash": "0f496c1b4b90d911e5cb6ba75460b107581b08c14f07a074d4f93594bce72c30"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-10.png",
+            "size": 152546,
+            "hash": "0319a76cb7381476a0bac221c81df8e11e024392f271e61d19231055440ad94e"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-11.png",
+            "size": 135006,
+            "hash": "b4030fea34ba17760febfc1976319d1a03cc9620c0429f7614faef8f50b71a23"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-12.png",
+            "size": 140430,
+            "hash": "f74ddc0b904e509c48f962b4e5dea74511594dfa17e0d0857cadb805eb80ee61"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-13.png",
+            "size": 152791,
+            "hash": "1f2e4f6f26206ec0fcc57bcab789ca36d4b4009333246ae2adc8233bf794cda2"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-14.png",
+            "size": 150025,
+            "hash": "49ee60c70439b9f6ca9ccdf7104d16cfa7bc86875b0916dd306f22a348ce579a"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-15.png",
+            "size": 148886,
+            "hash": "f16e2257142afca54d097eccb52f3644f7897ac5835e4a3229c19c05f672056a"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-2.png",
+            "size": 149736,
+            "hash": "b85152b8cde19630f70d6f2fa2a77e886000aaa27182f7d1422b86ca3658a097"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-4.png",
+            "size": 152302,
+            "hash": "ab7ca8d13aba67ac8692431a463a5461a2908d9e1cae1322a681c11f83f1f0a0"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-3.png",
+            "size": 149627,
+            "hash": "f26fcc808a41d25d676a5aa573aca30c125129fbc2472a1480a81626939f6282"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-5.png",
+            "size": 150694,
+            "hash": "c113bbad18a40c311c53dcdfdaffaec41880560e2c2a97f2039c07fadf1a6fca"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-6.png",
+            "size": 150784,
+            "hash": "f21d7825ebd6549659c970569b9cbaa750044cfd4ff1823e6eeb8a27b8b3adcc"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-7.png",
+            "size": 147134,
+            "hash": "c1208374b1a0d0bc91a8152ca0445c0676c9a85507351acab9bbe23d642ad9e3"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-8.png",
+            "size": 147318,
+            "hash": "d70966e15ed15e467bc22358d9900fa7bb0777ff918ac5b582448ac6234d1c70"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-5-9.png",
+            "size": 135451,
+            "hash": "d8de09ca43642b52dd6f6c6fa38cee5ab200bb7c455d7b68a5d99a26c68f9e81"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-1.png",
+            "size": 145115,
+            "hash": "ebcccc9256f67e4fe96188a2b0d4509f21d572f0924f019839f848ea32fb2fd2"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-10.png",
+            "size": 154258,
+            "hash": "8eba8d106b35d88196269acddb4bab733377ae6eb1f3145ac7d3eb847cb6335c"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-11.png",
+            "size": 132273,
+            "hash": "c2703a518036c8012b850dfa4cad94e58558af3e28776cfdccfd35b6f43fc621"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-12.png",
+            "size": 141583,
+            "hash": "1fac8681d249d27027f974960cbfc160e7fd755b86ce1042a15148b3e1049493"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-13.png",
+            "size": 147022,
+            "hash": "bae55f8a245410d036272292656b64eabe6ad5a3266f4537d4481681ce04607c"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-14.png",
+            "size": 148613,
+            "hash": "f70528b18f42377853e29d155867c4ee4747c5b49bd26a197a53619ef566b374"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-15.png",
+            "size": 145047,
+            "hash": "722102282f54515e89f6cbfc06711f32d393c9071ad52e1ef8f9f965238a17ed"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-2.png",
+            "size": 145153,
+            "hash": "a84b4179280422f88446cda8487ce1c25b7f56b976bf907cd440dba8ccc83415"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-3.png",
+            "size": 145174,
+            "hash": "bc2ea9bf06d83265f55f42bb2b013887922a5463a1a2048083a0e4aa95b57503"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-4.png",
+            "size": 153521,
+            "hash": "a6eb1f0c9b3fcf2d1bb72f66ff3b98fd1a17de6045bed8909f4b37729c840471"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-5.png",
+            "size": 147709,
+            "hash": "b37033bb699cc1ef5c3be74e8056a12cdbfa0d3b4d3ea953370fd4e59a3fb732"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-6.png",
+            "size": 147719,
+            "hash": "409b8fd589561804fcb3548416e642c45013d0d99a696484ec0330bcb89becc4"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-7.png",
+            "size": 144654,
+            "hash": "cf785bc92840014e6cb4a4b27148ecd9bb979e2ffa8d5dfccbc6388077634d83"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-8.png",
+            "size": 145044,
+            "hash": "288a8f3ea3414f113c61aec75e6b236dafafbffd5b8fb9615f333b1502710747"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/1-6-9.png",
+            "size": 132900,
+            "hash": "88549c6fe770b30ab1bf59aed0a7b1904e6802605c7e8fc62424013cbe9c3c2b"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/2-2-23.png",
+            "size": 91146,
+            "hash": "39d4088e740d49a81f7db80d79d39e184d77b5a4b74f68d1f9b4cd222fa04ca7"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/2-2-24.png",
+            "size": 91221,
+            "hash": "4e579647a9b35084525ba782607aab6a5fcbfbcfd8078d664c690c0a6a984872"
+        },
+        {
+            "type": "file",
+            "name": "public/src/img/SPRITES VIS2.zip",
+            "size": 4393601,
+            "hash": "4170e9bd7197acf749e16b6d165ab8beaa57637e58a849f4047474b4182060d4"
+        },
+        {
+            "type": "folder",
+            "name": "public/src/scripts/GraphicElements"
+        },
+        {
+            "type": "folder",
+            "name": "public/src/scripts/HELPERS"
+        },
+        {
+            "type": "file",
+            "name": "public/src/scripts/Main.js",
+            "size": 9092,
+            "hash": "94c574661828d13cf5a45754ef46f055d0f26b845725b502e4c52ee35198bd5f"
+        },
+        {
+            "type": "file",
+            "name": "public/src/scripts/jquery.min.js",
+            "size": 87533,
+            "hash": "fc9a93dd241f6b045cbff0481cf4e1901becd0e12fb45166a8f17f95823f0b1a"
+        },
+        {
+            "type": "folder",
+            "name": "public/src/scripts/questions"
+        },
+        {
+            "type": "folder",
+            "name": "public/view/src/script"
+        },
+        {
+            "type": "file",
+            "name": "public/src/scripts/GraphicElements/ElementItem.js",
+            "size": 6789,
+            "hash": "89ef01e2d36c2e267d5268ac1a9466d67033de0f647281cf52531088bf80d48e"
+        },
+        {
+            "type": "file",
+            "name": "public/src/scripts/GraphicElements/ElementsList.js",
+            "size": 4327,
+            "hash": "d875f0ccfff844ed48e39d380f83cee5e41842bc4df7e280a217f70de140b1d0"
+        },
+        {
+            "type": "file",
+            "name": "public/src/scripts/GraphicElements/ModalPositionOption.js",
+            "size": 3710,
+            "hash": "29707eea4b273e6db386fb1e55ae63b036b2bafac75d2ae48612c27910b2ba3a"
+        },
+        {
+            "type": "file",
+            "name": "public/src/scripts/HELPERS/Articles.js",
+            "size": 864,
+            "hash": "11891dde280bf3e327a118bca95f515a7bdb66f1ad21ed3cf6f226dde4f8e10f"
+        },
+        {
+            "type": "file",
+            "name": "public/src/scripts/questions/FormSection.js",
+            "size": 5173,
+            "hash": "c7650b7c4023b6ae2a61be14775f98313dec89fc1fa855e1febf4f27eea0cd5f"
+        },
+        {
+            "type": "file",
+            "name": "public/src/scripts/questions/Question.js",
+            "size": 2340,
+            "hash": "b8835f46d6a51cfd070c99734ed2c0c3fd8ba4ba00bc2bad76f41a524e4522f5"
+        },
+        {
+            "type": "file",
+            "name": "public/view/src/script/Main.js",
+            "size": 4530,
+            "hash": "02894eeedc2ceaffe7b0f1ad7cdc07489278dd295028b16a6a7ef71be2b54512"
+        },
+        {
+            "type": "folder",
+            "name": "public/view/src/script/helpers"
+        },
+        {
+            "type": "file",
+            "name": "public/view/src/script/helpers/dataLoader.js",
+            "size": 1547,
+            "hash": "318156bf376339de0ed85838b805583ba7125f8ee9d2d8207e3997dacbfd91b6"
+        }
+    ]
+}

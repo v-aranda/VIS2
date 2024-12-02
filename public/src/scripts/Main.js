@@ -151,6 +151,7 @@ export default class Main {
 
 
     async preload() {
+        console.log("teste ftp")
         const Loader = document.querySelector("#loader")
         Loader.classList.add('loading')
         Main.osData = {

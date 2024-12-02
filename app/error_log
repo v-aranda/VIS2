@@ -1,0 +1,532 @@
+[26-Oct-2024 10:58:48 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 10:58:48 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/vis/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/vis/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/vis/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/vis/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/vis/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 10:58:52 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 10:58:52 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/vis/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/vis/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/vis/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/vis/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/vis/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 11:34:13 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 11:34:13 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:45:52 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:45:52 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:01 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:01 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:02 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:02 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:25 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:25 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:27 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:27 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:28 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:28 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:28 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:28 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:29 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:29 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:30 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:30 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:30 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:30 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:31 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:31 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:31 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:31 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:31 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:31 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:31 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:31 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:31 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:31 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:31 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:31 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:32 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:32 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:32 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:32 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:32 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:32 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:32 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:32 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:32 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:32 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:32 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:32 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:33 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:33 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:33 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:33 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:33 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:33 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:33 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:33 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:33 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:33 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:33 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:33 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:33 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:33 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:34 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:34 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:34 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:34 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:34 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:34 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:34 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:34 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:34 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:34 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:34 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:34 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:35 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:35 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 12:47:46 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Oct-2024 12:47:46 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:17
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(32): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 17
+[26-Oct-2024 13:04:13 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php:36) in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php on line 18
+[26-Oct-2024 13:06:33 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php:36) in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php on line 34
+[26-Oct-2024 17:48:18 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php:36) in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php on line 18
+[26-Oct-2024 21:47:36 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php:40) in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php on line 18
+[26-Oct-2024 21:54:48 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php:40) in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php on line 18
+[27-Oct-2024 10:17:41 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[27-Oct-2024 10:17:41 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(35): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[27-Oct-2024 14:07:41 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ArtController::PUTArt(), 0 passed in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php on line 45 and exactly 1 expected in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php:83
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(45): ArtController->PUTArt()
+#1 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php on line 83
+[04-Nov-2024 10:37:05 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[04-Nov-2024 10:37:05 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[04-Nov-2024 10:37:10 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[04-Nov-2024 10:37:10 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/ArtModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/ArtController.php(10): ArtModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): ArtController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[04-Nov-2024 10:40:59 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[04-Nov-2024 10:40:59 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[04-Nov-2024 10:41:16 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[04-Nov-2024 10:41:16 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[04-Nov-2024 10:41:18 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[04-Nov-2024 10:41:18 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[04-Nov-2024 10:41:43 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[04-Nov-2024 10:41:43 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[04-Nov-2024 10:41:47 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[04-Nov-2024 10:41:47 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[04-Nov-2024 10:41:50 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[04-Nov-2024 10:41:50 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[04-Nov-2024 10:42:25 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[04-Nov-2024 10:42:25 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[04-Nov-2024 10:43:02 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[04-Nov-2024 10:43:02 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[04-Nov-2024 10:43:09 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[04-Nov-2024 10:43:09 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[04-Nov-2024 11:10:53 America/Fortaleza] Erro ao criar registro: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[04-Nov-2024 11:10:53 America/Fortaleza] Erro na API: Erro ao criar registro na tabela art.
+[04-Nov-2024 11:10:55 America/Fortaleza] Erro ao criar registro: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[04-Nov-2024 11:10:55 America/Fortaleza] Erro na API: Erro ao criar registro na tabela art.
+[04-Nov-2024 11:10:56 America/Fortaleza] Erro ao criar registro: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[04-Nov-2024 11:10:56 America/Fortaleza] Erro na API: Erro ao criar registro na tabela art.
+[04-Nov-2024 11:10:57 America/Fortaleza] Erro ao criar registro: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[04-Nov-2024 11:10:57 America/Fortaleza] Erro na API: Erro ao criar registro na tabela art.
+[04-Nov-2024 11:10:58 America/Fortaleza] Erro ao criar registro: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[04-Nov-2024 11:10:58 America/Fortaleza] Erro na API: Erro ao criar registro na tabela art.
+[04-Nov-2024 11:10:59 America/Fortaleza] Erro ao criar registro: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[04-Nov-2024 11:10:59 America/Fortaleza] Erro na API: Erro ao criar registro na tabela art.
+[04-Nov-2024 11:10:59 America/Fortaleza] Erro ao criar registro: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[04-Nov-2024 11:10:59 America/Fortaleza] Erro na API: Erro ao criar registro na tabela art.
+[04-Nov-2024 11:11:00 America/Fortaleza] Erro ao criar registro: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[04-Nov-2024 11:11:00 America/Fortaleza] Erro na API: Erro ao criar registro na tabela art.
+[04-Nov-2024 11:11:01 America/Fortaleza] Erro ao criar registro: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[04-Nov-2024 11:11:01 America/Fortaleza] Erro na API: Erro ao criar registro na tabela art.
+[06-Nov-2024 14:15:49 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[06-Nov-2024 14:15:49 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[06-Nov-2024 14:17:32 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[06-Nov-2024 14:17:32 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[06-Nov-2024 14:17:34 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[06-Nov-2024 14:17:34 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[06-Nov-2024 14:17:37 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[06-Nov-2024 14:17:37 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[06-Nov-2024 14:17:38 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[06-Nov-2024 14:17:38 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/PositionModel.php(8): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/PositionController.php(10): PositionModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(36): PositionController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[26-Nov-2024 11:06:43 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Nov-2024 11:06:43 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/TypeModel.php(10): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/TypeController.php(9): TypeModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(43): TypeController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[26-Nov-2024 11:06:47 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Nov-2024 11:06:47 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/TypeModel.php(10): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/TypeController.php(9): TypeModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(43): TypeController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[26-Nov-2024 11:06:57 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Nov-2024 11:06:57 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/TypeModel.php(10): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/TypeController.php(9): TypeModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(43): TypeController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[26-Nov-2024 11:07:18 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Nov-2024 11:07:18 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/TypeModel.php(10): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/TypeController.php(9): TypeModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(43): TypeController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[26-Nov-2024 11:07:47 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Nov-2024 11:07:47 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/TypeModel.php(10): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/TypeController.php(9): TypeModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(43): TypeController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
+[26-Nov-2024 11:09:11 America/Fortaleza] Erro na conexão com o banco de dados: SQLSTATE[HY000] [1045] Access denied for user 'vipspo66_admin'@'192.185.223.231' (using password: YES)
+[26-Nov-2024 11:09:11 America/Fortaleza] PHP Fatal error:  Uncaught Exception: Erro ao acessar o banco de dados. in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php:19
+Stack trace:
+#0 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/models/TypeModel.php(10): ConnectionTo->__construct('vipspo66_VIP_MO...')
+#1 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/controllers/TypeController.php(9): TypeModel->__construct('vipspo66_VIP_MO...')
+#2 /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/index.php(43): TypeController->__construct()
+#3 {main}
+  thrown in /home2/vipspo66/vipsportsproducao.com.br/VIS2/app/database/ConnectionTo.php on line 19
