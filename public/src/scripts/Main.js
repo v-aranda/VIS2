@@ -148,8 +148,11 @@ export default class Main {
         return await raw.json()
     }
 
-    async preload() {
 
+
+    async preload() {
+        const Loader = document.querySelector("#loader")
+        Loader.classList.add('loading')
         Main.osData = {
             "art_os": urlParams.get('codItem'),
             "art_description": urlParams.get('artName'),
@@ -165,9 +168,9 @@ export default class Main {
         new ModalPositionOption(Main.elementsTypes, Main.osData.art_product)
 
         Main.formBase = await this.getFormBase()
-        console.log("Base:",Main.formBase)
         
-        this.main()
+        this.main().then(()=>Loader.classList.remove('loading'))
+        
     }
 
     async main() {

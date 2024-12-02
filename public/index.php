@@ -61,7 +61,7 @@
 
     <main class="container mt-5">
         <h3 id="formTitle" class="text-center mb-4">Formulário de Atendimento - VIP Sports</h3>
-        <p id="formSubTitle"  class="text-center mb-4"></p>
+        <p id="formSubTitle" class="text-center mb-4"></p>
         <hr>
         <section id="ElementsContainer" class="p-3">
             <h2 class="d-flex align-items-center">
@@ -87,7 +87,11 @@
             </h2>
 
         </section>
-
+        <div class="text-center bg-secondary" id="loader">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
 
 
 

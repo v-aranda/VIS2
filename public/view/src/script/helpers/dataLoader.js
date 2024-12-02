@@ -11,11 +11,10 @@ export default class dataLoader {
        
         const osData= await fetch(this.hostUrl+`/VIS2/app/Art/${this.osCode}`).then(response => response.json())
         
-        console.log(osData)
         if (!osData.obj_form_atendimento
         ) {
             return Swal.fire({
-                title: 'Não encontrada!',
+                title: 'Não Encontrado!',
                 text: 'Serviço não possui especificações de arte',
                 icon: 'error',
                 confirmButtonText: 'OK'
@@ -33,13 +32,12 @@ export default class dataLoader {
                 }
                 return [infos,data]
             }catch(e) {
-                console.log(e)
                 return Swal.fire({
-                    title: 'Arte Não Encontrada!',
-                    text: 'Essa OS ainda não possui uma arte',
+                    title: 'Não Encontrado!',
+                    text: 'Serviço não possui especificações de arte',
                     icon: 'info',
                     confirmButtonText: 'OK'
-                }).then(() => window.location = "https://www.vipsportsproducao.com.br/VIS2/public/index.php?os=" + osCode)
+                }).then(() => window.parent.ocultaFormVis2())
             }
         }
 
