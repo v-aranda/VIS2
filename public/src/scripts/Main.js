@@ -178,7 +178,6 @@ export default class Main {
         Main.AdditionalInfosForm = {}
         
         Object.keys(Main.aditionalQuestions).forEach(key => {
-            console.log(Main.aditionalQuestions[key])
             Main.AdditionalInfosForm[key] = new FormSection(Main.aditionalQuestions[key], key)
         })
         const elementsList = new ElementsList(Main.elementsTypes, Main.formBase);
@@ -235,7 +234,6 @@ export default class Main {
                 const raw_data = Main.osData["art_object"]
                 
                 let data = JSON.parse(raw_data)
-                console.log(typeof(data))
                 Main.creating = false
 
                 if (data === null) {
@@ -282,7 +280,6 @@ export default class Main {
                 throwBackToParent(retorno)
             }
         } catch (e) {
-            console.log(e)
             Swal.fire({
                 title: 'Informação Inconsistente!',
                 text: e.message,

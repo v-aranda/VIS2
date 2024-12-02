@@ -68,10 +68,6 @@ class Main{
         
         elementos.forEach(elemento => {
             const currentType = Main.types.filter(type => type.ety_id == elemento.typeOfElement)[0]
-            console.log("=================================")
-            console.log(elemento)
-            console.log(Main.positions)
-            console.log("=================================")
             const currentPosition = Main.positions.filter(position => position.pos_id == elemento.elementPosition)[0]
             
             const container = document.getElementById(elemento.typeOfElement+'elements')

@@ -117,11 +117,13 @@ export default class ElementsList {
   }
 
   getAnswers(){
-    if(this.values.length == 1 && Object.values(this.values[0]).includes('-1')){
-      throw new Error("Informe pelomenos 1 elemento!")
-    }
     this.values.forEach(element => {
+        
         if(Object.values(element).includes('-1')){
+            const container = document.querySelector(element.container)
+            container.style.boxShadow= "rgba(255, 0, 0, 0.5) 0px 2px 8px 0px";
+            container.addEventListener('click',()=>container.style.boxShadow = "none")
+            window.scrollTo(0,  container.offsetTop - 100)
             throw new Error("Preencha todos os campos do elemento")
         }
     });
