@@ -19,7 +19,7 @@ export default class dataLoader {
                 text: 'Serviço não possui especificações de arte',
                 icon: 'error',
                 confirmButtonText: 'OK'
-            }).then(() => ocultaFormVis2())
+            }).then(() => window.parent.ocultaFormVis2())
         } else {
             try {
                 document.querySelector("#formTitle").textContent = osData.desc_servico
