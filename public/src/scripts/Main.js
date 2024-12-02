@@ -115,13 +115,13 @@ function throwBackToParent(resp){
 
     try{
         window.parent.objFormEspecificacoes = JSON.stringify(resp)
-        console.log(window.parent.objFormEspecificacoes)
+      
         return Swal.fire({
             title: 'Dados Atualizados!',
             text: "Dados Salvos com Sucesso!",
             icon: 'success',
             confirmButtonText: 'OK'
-        })  
+        }).then(() => window.parent.ocultaFormVis2())
     }catch{
         throw new Error("Erro ao Retornar Dados!")
     }
@@ -207,14 +207,14 @@ export default class Main {
                 text: 'Informe um Código valido!',
                 icon: 'error',
                 confirmButtonText: 'OK'
-            }).then(() => history.back())
+            }).then(() => window.parent.ocultaFormVis2())
         } else if (!Main.enabledProducts.includes(parseInt(osData.art_product))) {
             return Swal.fire({
                 title: 'Produto indisponível!',
                 text: 'Ainda estamos trabalhando nisso!',
                 icon: 'warning',
                 confirmButtonText: 'OK'
-            }).then(() => history.back())
+            }).then(() => window.parent.ocultaFormVis2())
         } else {
             try {
                 document.querySelector("#formTitle").textContent = osData.art_description

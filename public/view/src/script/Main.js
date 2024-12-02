@@ -79,7 +79,7 @@ class Main{
             elementLi.classList.add('d-flex','flex-row','p-3')
             const elementFigure = document.createElement('img')
             console.log(currentType)
-            elementFigure.src = `http://localhost/VIS2/public/src/img/${Main.os.art_product}-${currentType.ety_id}-${currentPosition.pos_id}.png`
+            elementFigure.src = `https://vipsportsproducao.com.br/VIS2/public/src/img/${Main.os.art_product}-${currentType.ety_id}-${currentPosition.pos_id}.png`
             elementFigure.classList.add('col-2')
             const elementDiv = document.createElement('div')
             elementDiv.classList.add('p-3')
