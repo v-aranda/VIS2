@@ -36,7 +36,8 @@
             flex-direction: column;
             gap: 5px;
         }
-        #loader{
+
+        #visLoader {
             width: 100%;
             height: 100%;
             position: fixed;
@@ -45,15 +46,13 @@
             justify-content: center;
             z-index: 9;
         }
-        
-
     </style>
 </head>
 
 <body>
-<div class="text-center bg-white" id="loader">
-            <div class="spinner-grow text-primary" role="status"></div>
-        </div>
+    <div class="text-center bg-white" id="visLoader">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
     <!-- CONTAINER -->
     <div id="exampleModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -96,11 +95,11 @@
         <hr>
         <section id="AditionalInfos" class="p-3">
             <h2 class="d-flex align-items-center">
-                Informações adicionai
+                Informações adicionais
             </h2>
 
         </section>
-        
+
 
 
 

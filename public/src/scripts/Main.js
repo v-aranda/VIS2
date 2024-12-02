@@ -152,6 +152,7 @@ export default class Main {
 
     async preload() {
         
+        
         Main.osData = {
             "art_os": urlParams.get('codItem'),
             "art_description": urlParams.get('artName'),
@@ -168,14 +169,16 @@ export default class Main {
 
         Main.formBase = await this.getFormBase()
         
-        this.main().then(()=>Loader.classList.remove('loading'))
-        
+        this.main()
+        const loader = document.querySelector("#visLoader")
+        setTimeout(() => {loader.style.display = "none"}, 1000)
     }
 
     async main() {
         Main.AdditionalInfosForm = {}
+        
         Object.keys(Main.aditionalQuestions).forEach(key => {
-           
+            console.log(Main.aditionalQuestions[key])
             Main.AdditionalInfosForm[key] = new FormSection(Main.aditionalQuestions[key], key)
         })
         const elementsList = new ElementsList(Main.elementsTypes, Main.formBase);
@@ -187,8 +190,8 @@ export default class Main {
             elementsList.createElement()
         })
 
-        const Loader = document.querySelector("#loader")
-        Loader.style.display = "none"
+        
+        return
     }
 
     async getFormBase() {
