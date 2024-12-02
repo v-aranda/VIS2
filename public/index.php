@@ -39,6 +39,11 @@
         #loader{
             width: 100%;
             height: 100%;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9;
         }
         
 
@@ -46,10 +51,8 @@
 </head>
 
 <body>
-<div class="text-center bg-secondary" id="loader">
-            <div class="spinner-border" role="status">
-                Loading...
-            </div>
+<div class="text-center bg-white" id="loader">
+            <div class="spinner-grow text-primary" role="status"></div>
         </div>
     <!-- CONTAINER -->
     <div id="exampleModal" class="modal" tabindex="-1" role="dialog">
