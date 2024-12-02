@@ -41,6 +41,7 @@
             height: 100%;
             position: fixed;
             display: none;
+            z-index: 10000;
         }
         #loader.loading{
             display: flex;
