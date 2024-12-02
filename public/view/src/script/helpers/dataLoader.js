@@ -15,8 +15,8 @@ export default class dataLoader {
         if (!osData.obj_form_atendimento
         ) {
             return Swal.fire({
-                title: 'Os não encontrada!',
-                text: 'Informe um Código valido!',
+                title: 'Não encontrada!',
+                text: 'Serviço não possui especificações de arte',
                 icon: 'error',
                 confirmButtonText: 'OK'
             }).then(() => ocultaFormVis2())
