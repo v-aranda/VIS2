@@ -39,13 +39,8 @@
         #loader{
             width: 100%;
             height: 100%;
-            position: fixed;
-            display: none;
-            z-index: 10000;
         }
-        #loader.loading{
-            display: flex;
-        }
+        
 
     </style>
 </head>
@@ -53,6 +48,7 @@
 <body>
 <div class="text-center bg-secondary" id="loader">
             <div class="spinner-border" role="status">
+                Loading...
             </div>
         </div>
     <!-- CONTAINER -->
@@ -97,8 +93,7 @@
         <hr>
         <section id="AditionalInfos" class="p-3">
             <h2 class="d-flex align-items-center">
-                Informações adicionais
-
+                Informações adicionai
             </h2>
 
         </section>
