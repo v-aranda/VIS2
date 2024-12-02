@@ -19,7 +19,7 @@ export default class dataLoader {
                 text: 'Informe um Código valido!',
                 icon: 'error',
                 confirmButtonText: 'OK'
-            }).then(() => history.back())
+            }).then(() => ocultaFormVis2())
         } else {
             try {
                 document.querySelector("#formTitle").textContent = osData.desc_servico
