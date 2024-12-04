@@ -1,4 +1,4 @@
-<?php   
+<?php
 class QuestionController
 {
 
@@ -8,6 +8,38 @@ class QuestionController
         http_response_code(200); // Not Found
         header('Content-Type: application/json');
         echo ('{
+        "1": [
+            {
+                "id": "Logotype_1",
+                "infos": {
+                    "title": "Logotipos vão sofrer alguma alteração?",
+                    "desc": "",
+                    "resume": "Alteração de Logotipos",
+                    "alternativas": [
+                        "Não",
+                        "Sim"
+                    ],
+                    "justificativas": [
+                        1
+                    ]
+                }
+            },
+            {
+                "id": "Logotype_2",
+                "infos": {
+                    "title": "Já temos esses logotipos?",
+                    "desc": "Informe um ou mais serviços que contenham os logotipos necessários.",
+                    "resume": "Logotipo Novo",
+                    "alternativas": [
+                        "Não",
+                        "Sim"
+                    ],
+                    "justificativas": [
+                        1
+                    ]
+                }
+            }
+        ],
     "2": [
         {
             "id": "Custom_1",
@@ -61,5 +93,4 @@ class QuestionController
 
         return;
     }
-
 }
