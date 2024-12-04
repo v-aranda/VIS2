@@ -13,6 +13,8 @@ class Main{
         const dados = await new data(BASE_URL, global_host).data; 
         Main.os = dados[0]
         Main.art = dados[1]
+        console.log("OS:",Main.os)
+        console.log("ART:",Main.art)
         Main.types = await fetch(global_host+"/VIS2/app/Type/"+Main.os.art_product).then(response => response.json())
         Main.positions = await fetch(global_host+"/VIS2/app/Position").then(response => response.json())
         this.loadSingleTypes(Main.art.elementos)
