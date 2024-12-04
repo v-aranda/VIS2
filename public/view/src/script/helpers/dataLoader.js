@@ -24,8 +24,7 @@ export default class dataLoader {
                 document.querySelector("#formTitle").textContent = osData.desc_servico
                 const data = JSON.parse(osData.obj_form_atendimento)
 
-                // data.elementos = JSON.parse(data.elementos)
-                // data.complementos = JSON.parse(data.complementos)
+                console.log("res:",data)
                 const infos = {
                     art_product: osData.cod_produto,
                     art_description: osData.desc_servico
