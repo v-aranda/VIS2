@@ -2,6 +2,7 @@
 class QuestionController
 {
 
+    //teste
     // GET uri/art/{id} - Buscar um elemento específico
     public function GETQuestion()
     {
@@ -67,7 +68,7 @@ class QuestionController
                     "Numeração Sequencial Unica(Ex: Do 1 em Diante.)",
                     "Numeração Personalizada(De acordo com a tabela)",
                     "Numeração Sequencial em Intervalos(Ex: Modelo 1: 1-20; Modelo 2: 21-30; etc.)",
-                    "Numeração Sequencial Multipla(Ex: Modelo 1: 1-20; modelo 2: 1-10; modelo 3: 1-15)",
+                    "Numeração Sequencial Multipla(Ex: Modelo 1: 1-20; modelo 2: 1-10; modelo 3: 1-15)"
                 ],
                 "justificativas": [
                     2,
