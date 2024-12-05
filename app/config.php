@@ -1,5 +1,5 @@
 <?php
-$producao = true;
+$producao = false;
 
 if($producao){
     define('LOCALHOST',"localhost");

@@ -76,6 +76,15 @@
         <h3 id="formTitle" class="text-center mb-4">Formulário de Atendimento - VIP Sports</h3>
         <p id="formSubTitle" class="text-center mb-4"></p>
         <hr>
+        <section class="p-3">
+            <h2 class="d-flex align-items-center">
+                Descrição Geral
+            </h2>
+            <div class="form-group">
+                <textarea class="form-control" id="descriptionInput" placeholder="Descreva as informações gerais da arte"     ></textarea>
+            </div>
+            
+        </section>
         <section id="ElementsContainer" class="p-3">
             <h2 class="d-flex align-items-center">
                 Elementos Graficos

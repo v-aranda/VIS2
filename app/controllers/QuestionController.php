@@ -30,7 +30,7 @@ class QuestionController
                 "infos": {
                     "title": "Já temos esses logotipos?",
                     "desc": "Informe um ou mais serviços que contenham os logotipos necessários.",
-                    "resume": "Logotipo Novo",
+                    "resume": "Já temos os Logotipos",
                     "alternativas": [
                         "Não",
                         "Sim"
@@ -79,7 +79,7 @@ class QuestionController
     ],
     "3": [
         {
-            "id": "Name_1",
+            "id": "Name_3",
             "infos": {
                 "title": "As letras do nome serão:",
                 "desc": "",
@@ -93,7 +93,7 @@ class QuestionController
             }
         },
         {
-            "id": "Name_2",
+            "id": "Name_4",
             "infos": {
                 "title": "O cliente quer alguma fonte expecífica?",
                 "desc": "Liste as fontes que o cliente deseja.",
@@ -107,7 +107,59 @@ class QuestionController
                 ]
             }
         }
-    ]
+    ],
+    "4": [
+            {
+                "id": "ilustration_1",
+                "infos": {
+                    "title": "Ilustrações vão sofrer alguma alteração?",
+                    "desc": "",
+                    "resume": "Alteração de Ilustrações",
+                    "alternativas": [
+                        "Não",
+                        "Sim"
+                    ],
+                    "justificativas": [
+                        1
+                    ]
+                }
+            },
+            {
+                "id": "ilustration_2",
+                "infos": {
+                    "title": "Já temos estas as Ilustrações?",
+                    "desc": "Informe um ou mais serviços que contenham as ilustrações necessárias.",
+                    "resume": "Já temos as Ilustrações",
+                    "alternativas": [
+                        "Não",
+                        "Sim"
+                    ],
+                    "justificativas": [
+                        1
+                    ]
+                }
+            }
+                
+        ],
+        "5": [
+            {
+                "id": "patroc_2",
+                "infos": {
+                    "title": "Já temos estes patrocinadores?",
+                    "desc": "Informe os serviços que contêm estes patrocinadores.",
+                    "resume": "Já temos os patrocinadores",
+                    "alternativas": [
+                        "Não",
+                        "Sim"
+                    ],
+                    "justificativas": [
+                        1
+                    ]
+                }
+            }
+                
+        ]
+     
 }');
 
         return;

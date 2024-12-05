@@ -2,6 +2,7 @@ import ElementsList from "./GraphicElements/ElementsList.js"
 import FormSection from "./questions/FormSection.js";
 import global_host from "../../config.js";
 import ModalPositionOption from "./GraphicElements/ModalPositionOption.js";
+import Description from "./Description/Description.js";
 
 
 const parent = window.parent.document.getElementById("iframeVis2")
@@ -31,86 +32,86 @@ const defaultElementsList = {
     }
 }
 
-async function createArt(resp) {
-    try {     
-        const osData = Main.osData
-        fetch(`${global_host}/VIS2/app/Art`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(osData),
-        }).then(() => createArtMetaData(resp))
-            .catch((error) => {
-                Swal.fire({
-                    title: 'Erro de Criação',
-                    text: error.message,
-                    icon: 'error',
-                    confirmButtonText: 'OK'
-                })
-                console.error('Error', error);
-            });
-    } catch {
-        Swal.fire({
-            title: 'Os não encontrada!',
-            text: error.message,
-            icon: 'error',
-            confirmButtonText: 'OK'
-        })
-        console.error('Error', error);
-    }
+// async function createArt(resp) {
+//     try {     
+//         const osData = Main.osData
+//         fetch(`${global_host}/VIS2/app/Art`, {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(osData),
+//         }).then(() => createArtMetaData(resp))
+//             .catch((error) => {
+//                 Swal.fire({
+//                     title: 'Erro de Criação',
+//                     text: error.message,
+//                     icon: 'error',
+//                     confirmButtonText: 'OK'
+//                 })
+//                 console.error('Error', error);
+//             });
+//     } catch {
+//         Swal.fire({
+//             title: 'Os não encontrada!',
+//             text: error.message,
+//             icon: 'error',
+//             confirmButtonText: 'OK'
+//         })
+//         console.error('Error', error);
+//     }
 
-}
-async function createArtMetaData(resp) {
-    fetch(`${global_host}/VIS2/app/ArtMetaData`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(resp),
-    })
-        .then(response => response
-        )
-        .then(async data => {
-            Swal.fire({
-                title: 'Dados Cadastrados!',
-                text: 'Arte Criada com Sucesso!',
-                icon: 'success',
-                confirmButtonText: 'OK'
-            })
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            Swal.fire({
-                title: 'Erro de Criação',
-                text: error.message,
-                icon: 'error',
-                confirmButtonText: 'OK'
-            })
+// }
+// async function createArtMetaData(resp) {
+//     fetch(`${global_host}/VIS2/app/ArtMetaData`, {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(resp),
+//     })
+//         .then(response => response
+//         )
+//         .then(async data => {
+//             Swal.fire({
+//                 title: 'Dados Cadastrados!',
+//                 text: 'Arte Criada com Sucesso!',
+//                 icon: 'success',
+//                 confirmButtonText: 'OK'
+//             })
+//         })
+//         .catch((error) => {
+//             console.error('Error:', error);
+//             Swal.fire({
+//                 title: 'Erro de Criação',
+//                 text: error.message,
+//                 icon: 'error',
+//                 confirmButtonText: 'OK'
+//             })
 
-        });
-}
-function updateArtMetaData(resp, osCode) {
-    fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(resp),
-    })
-    .then(response => response.json())
-    .then(data => {
+//         });
+// }
+// function updateArtMetaData(resp, osCode) {
+//     fetch(`${global_host}/VIS2/app/ArtMetaData/` + osCode, {
+//         method: 'PUT',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(resp),
+//     })
+//     .then(response => response.json())
+//     .then(data => {
         
-    })
-    .catch((error) => {
-        Swal.fire({
-            title: 'Falha de Atualização!',
-            text: error.message,
-            icon: 'error',
-            confirmButtonText: 'OK'
-        })
-    });
-}
+//     })
+//     .catch((error) => {
+//         Swal.fire({
+//             title: 'Falha de Atualização!',
+//             text: error.message,
+//             icon: 'error',
+//             confirmButtonText: 'OK'
+//         })
+//     });
+// }
 function throwBackToParent(resp){
 
     try{
@@ -138,6 +139,7 @@ export default class Main {
     static osCode
     static creating
     static enabledProducts = [1]
+    static descriptionData = new Description("descriptionInput")
 
     constructor() {
         this.preload()
@@ -167,8 +169,10 @@ export default class Main {
         
         new ModalPositionOption(Main.elementsTypes, Main.osData.art_product)
 
-        Main.formBase = await this.getFormBase()
         
+        Main.formBase = await this.getFormBase()
+        Main.descriptionData.load(Main.formBase["description"])
+
         this.main()
         const loader = document.querySelector("#visLoader")
         setTimeout(() => {loader.style.display = "none"}, 1000)
@@ -239,20 +243,23 @@ export default class Main {
                 if (data === null) {
                     throw new Error("Erro ao carregar dados!")
                 }
-
-                // data.elementos = JSON.parse(data.elementos)
-                // data.complementos = JSON.parse(data.complementos)
                 
                 return data
             } catch (e){
-                console.log(e)
                 Main.creating = true
                 return defaultElementsList[osData.art_product]
             }
         }
     }
 
-
+    getDescriptions() {
+        try {
+            return document.querySelector("#descriptionInput").value
+        }catch{
+            return false
+        }
+        
+    }
     submitHandler(elementsList) {
 
         try {
@@ -271,6 +278,9 @@ export default class Main {
                 elementos: elementos,
                 complementos: complements,
             }
+            console.log("teste", data)
+            data["description"] = Main.descriptionData.get()
+
             console.log("data:", data);
             const retorno = data
 
