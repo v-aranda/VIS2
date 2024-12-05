@@ -39,6 +39,7 @@ class QuestionController
                     ]
                 }
             }
+                
         ],
     "2": [
         {
@@ -64,30 +65,45 @@ class QuestionController
                 "resume": "Tipo de Numeração",
                 "alternativas": [
                     "Numeração Sequencial Unica(Ex: Do 1 em Diante.)",
+                    "Numeração Personalizada(De acordo com a tabela)",
                     "Numeração Sequencial em Intervalos(Ex: Modelo 1: 1-20; Modelo 2: 21-30; etc.)",
-                    "Numeração Sequencial Multipla(Ex: Modelo 1: 1-20; modelo 2: 1-10; modelo 3: 1-15)"
+                    "Numeração Sequencial Multipla(Ex: Modelo 1: 1-20; modelo 2: 1-10; modelo 3: 1-15)",
                 ],
                 "justificativas": [
-                    1,
-                    2
+                    2,
+                    3
                 ]
             }
         }
     ],
     "3": [
         {
-            "id": "Name_3",
+            "id": "Name_1",
             "infos": {
-                "title": "Os nomes vão usar acento?",
+                "title": "As letras do nome serão:",
                 "desc": "",
-                "resume": "Acentuação",
+                "resume": "Padrão das Letras",
                 "alternativas": [
-                    "Sim",
-                    "Não"
+                    "MAIUSCULAS",
+                    "minusculas",
+                    "Capitalizadas"
                 ],
                 "justificativas": []
             }
-        }
+        },
+        "id": "Name_2",
+            "infos": {
+                "title": "O cliente quer alguma fonte expecífica?",
+                "desc": "Liste as fontes que o cliente deseja.",
+                "resume": "Fontes",
+                "alternativas": [
+                    "Não",
+                    "Sim"
+                ],
+                "justificativas": [
+                    1
+                ]
+            }
     ]
 }');
 
