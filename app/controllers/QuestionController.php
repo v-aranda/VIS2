@@ -92,7 +92,8 @@ class QuestionController
                 "justificativas": []
             }
         },
-        "id": "Name_2",
+        {
+            "id": "Name_2",
             "infos": {
                 "title": "O cliente quer alguma fonte expecífica?",
                 "desc": "Liste as fontes que o cliente deseja.",
@@ -105,6 +106,7 @@ class QuestionController
                     1
                 ]
             }
+        }
     ]
 }');
 
